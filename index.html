@@ -337,40 +337,6 @@
             }
         }
 
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
-            color: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            animation: float-whats 3s ease-in-out infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-        }
-
-        @keyframes float-whats {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
         .modal {
             display: none;
             position: fixed;
@@ -530,14 +496,6 @@
                 font-size: 1.5rem;
             }
 
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
-                bottom: 20px;
-                right: 20px;
-            }
-
             .curso-section h3 {
                 font-size: 1.5rem;
             }
@@ -643,102 +601,96 @@
             background: rgba(255,255,255,0.3);
         }
 
-        .social-float{
-position:fixed;
-bottom:30px;
-right:30px;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:1000;
-}
+        .social-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
 
-.float-btn{
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-color:white;
-text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-transition:0.3s;
-animation:float-whats 3s ease-in-out infinite;
-}
+        .float-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transition: 0.3s;
+            animation: float-whats 3s ease-in-out infinite;
+        }
 
-.float-btn:hover{
-transform:scale(1.1);
-}
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
 
-.float-btn.whatsapp{
-background:linear-gradient(135deg,#25d366,#128C7E);
-}
+        .float-btn.whatsapp {
+            background: linear-gradient(135deg,#25d366,#128C7E);
+        }
 
-.float-btn.instagram{
-background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
+        .float-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
 
-.float-btn.tiktok{
-background:linear-gradient(45deg,#000,#69C9D0);
-}
+        .float-btn.tiktok {
+            background: linear-gradient(45deg,#000,#69C9D0);
+        }
 
-.contact-icons{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-bottom:25px;
-flex-wrap:wrap;
-}
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
 
-.contact-icons .icon{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+        .contact-icons .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: white;
+            font-size: 28px;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
 
-width:80px;
-height:80px;
+        .contact-icons .icon span {
+            font-size: 12px;
+            margin-top: 6px;
+            font-weight: bold;
+        }
 
-border-radius:18px;
-text-decoration:none;
-color:white;
+        .contact-icons .icon:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
 
-font-size:28px;
-transition:0.3s;
+        .icon.instagram {
+            background: linear-gradient(45deg,#fd5949,#d6249f,#285AEB);
+        }
 
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
+        .icon.tiktok {
+            background: linear-gradient(45deg,#000,#ff0050);
+        }
 
-.contact-icons .icon span{
-font-size:12px;
-margin-top:6px;
-font-weight:bold;
-}
+        .icon.email {
+            background: linear-gradient(45deg,#ff7b00,#ffb347);
+        }
 
-.contact-icons .icon:hover{
-transform:translateY(-6px) scale(1.05);
-box-shadow:0 12px 25px rgba(0,0,0,0.3);
-}
-
-/* cores */
-
-.icon.instagram{
-background:linear-gradient(45deg,#fd5949,#d6249f,#285AEB);
-}
-
-.icon.tiktok{
-background:linear-gradient(45deg,#000,#ff0050);
-}
-
-.icon.email{
-background:linear-gradient(45deg,#ff7b00,#ffb347);
-}
-
-.icon.whatsapp{
-background:linear-gradient(45deg,#25d366,#128C7E);
-}
+        .icon.whatsapp {
+            background: linear-gradient(45deg,#25d366,#128C7E);
+        }
     </style>
 </head>
 <body>
@@ -829,204 +781,232 @@ background:linear-gradient(45deg,#25d366,#128C7E);
                 <p>Profissionais apaixonados pelo que fazem</p>
             </div>
         </section>
-
     </div>
 
+    <!-- Modal Cuidador -->
     <div id="modalCuidador" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('cuidador')">&times;</span>
             <h2>Quero ser cuidador</h2>
             <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
+                <div class="form-group">
+                    <label>Nome completo</label>
+                    <input type="text" name="Nome" required>
+                </div>
 
-                <label>Nome completo</label>
-                <input type="text" name="Nome" required>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="Email" required>
+                </div>
 
-                <label>Email</label>
-                <input type="email" name="Email" required>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" name="Telefone" required>
+                </div>
 
-                <label>Telefone</label>
-                <input type="tel" name="Telefone" required>
+                <div class="form-group">
+                    <label>Idade</label>
+                    <input type="number" name="Idade" min="18" max="80" required>
+                </div>
 
-                <label>Idade</label>
-                <input type="number" name="Idade" min="18" max="80" required>
+                <div class="form-group">
+                    <label>Experiência</label>
+                    <select name="Experiencia" required>
+                        <option value="">Selecione</option>
+                        <option>Sem experiência</option>
+                        <option>1-2 anos</option>
+                        <option>3-5 anos</option>
+                        <option>Mais de 5 anos</option>
+                    </select>
+                </div>
 
-                <label>Experiência</label>
-                <select name="Experiencia" required>
-                <option value="">Selecione</option>
-                <option>Sem experiência</option>
-                <option>1-2 anos</option>
-                <option>3-5 anos</option>
-                <option>Mais de 5 anos</option>
-                </select>
+                <div class="form-group">
+                    <label>Formação</label>
+                    <select name="Formacao">
+                        <option>Não possui</option>
+                        <option>Curso de cuidador</option>
+                        <option>Técnico em enfermagem</option>
+                        <option>Enfermeiro</option>
+                    </select>
+                </div>
 
-                <label>Formação</label>
-                <select name="Formacao">
-                <option>Não possui</option>
-                <option>Curso de cuidador</option>
-                <option>Técnico em enfermagem</option>
-                <option>Enfermeiro</option>
-                </select>
+                <div class="form-group">
+                    <label>Disponibilidade</label>
+                    <select name="Disponibilidade" required>
+                        <option>Diurno</option>
+                        <option>Noturno</option>
+                        <option>24 horas</option>
+                        <option>Fins de semana</option>
+                    </select>
+                </div>
 
-                <label>Disponibilidade</label>
-                <select name="Disponibilidade" required>
-                <option>Diurno</option>
-                <option>Noturno</option>
-                <option>24 horas</option>
-                <option>Fins de semana</option>
-                </select>
+                <div class="form-group">
+                    <label>Mensagem</label>
+                    <textarea name="Mensagem"></textarea>
+                </div>
 
-                <label>Mensagem</label>
-                <textarea name="Mensagem"></textarea>
-
+                <input type="hidden" name="_next" value="obrigado.html">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="Cadastro de novo cuidador">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Recebemos seu cadastro! Em breve entraremos em contato.">
 
-                <button type="submit">Enviar Cadastro</button>
-
-                </form>
+                <button type="submit" class="submit-btn">Enviar Cadastro</button>
+            </form>
         </div>
     </div>
 
+    <!-- Modal Precisa de Cuidador -->
     <div id="modalPrecisa" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('precisa')">&times;</span>
             <h2>Preciso de um cuidador</h2>
             <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
+                <div class="form-group">
+                    <label>Nome completo</label>
+                    <input type="text" name="Nome" required>
+                </div>
 
-            <label>Nome</label>
-            <input type="text" name="Nome" required>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="Email" required>
+                </div>
 
-            <label>Email</label>
-            <input type="email" name="Email" required>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" name="Telefone" required>
+                </div>
 
-            <label>Telefone</label>
-            <input type="tel" name="Telefone" required>
+                <div class="form-group">
+                    <label>Parentesco</label>
+                    <select name="Parentesco" required>
+                        <option value="">Selecione</option>
+                        <option>Pai</option>
+                        <option>Mãe</option>
+                        <option>Avô/Avó</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
 
-            <label>Parentesco</label>
-            <select name="Parentesco" required>
-            <option>Pai</option>
-            <option>Mãe</option>
-            <option>Avô/Avó</option>
-            <option>Outro</option>
-            </select>
+                <div class="form-group">
+                    <label>Idade do idoso</label>
+                    <input type="number" name="Idade do Idoso" min="40" max="120" required>
+                </div>
 
-            <label>Idade do idoso</label>
-            <input type="number" name="Idade do Idoso" min="40" max="120" required>
+                <div class="form-group">
+                    <label>Tipo de cuidado</label>
+                    <select name="Tipo de Cuidado" required>
+                        <option value="">Selecione</option>
+                        <option>Companhia</option>
+                        <option>Cuidados básicos</option>
+                        <option>Cuidados médicos</option>
+                        <option>Cuidados completos</option>
+                    </select>
+                </div>
 
-            <label>Tipo de cuidado</label>
-            <select name="Tipo de Cuidado" required>
-            <option>Companhia</option>
-            <option>Cuidados básicos</option>
-            <option>Cuidados médicos</option>
-            <option>Cuidados completos</option>
-            </select>
+                <div class="form-group">
+                    <label>Período</label>
+                    <select name="Periodo" required>
+                        <option value="">Selecione</option>
+                        <option>Diurno</option>
+                        <option>Noturno</option>
+                        <option>24 horas</option>
+                        <option>Fins de semana</option>
+                    </select>
+                </div>
 
-            <label>Período</label>
-            <select name="Periodo" required>
-            <option>Diurno</option>
-            <option>Noturno</option>
-            <option>24 horas</option>
-            <option>Fins de semana</option>
-            </select>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea name="Descricao"></textarea>
+                </div>
 
-            <label>Descrição</label>
-            <textarea name="Descricao"></textarea>
+                <input type="hidden" name="_next" value="obrigado.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Cliente precisa de cuidador">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Recebemos sua solicitação! Em breve entraremos em contato.">
 
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Cliente precisa de cuidador">
-            <input type="hidden" name="_template" value="table">
-
-            <button type="submit">Solicitar cuidador</button>
-
+                <button type="submit" class="submit-btn">Solicitar cuidador</button>
             </form>
         </div>
     </div>
 
+    <!-- Botões flutuantes -->
     <div class="social-float">
+        <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
 
-<a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
+        <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
 
-<a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
+        <a href="https://tiktok.com" class="float-btn tiktok" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
 
-<a href="https://tiktok.com" class="float-btn tiktok" target="_blank">
-<i class="fab fa-tiktok"></i>
-</a>
-
-</div>
-
-            <div id="modalContato" class="modal">
+    <!-- Modal Contato -->
+    <div id="modalContato" class="modal">
         <div class="modal-content">
+            <span class="close-modal" onclick="closeContato()">&times;</span>
+            <h2>Entre em contato</h2>
 
-        <span class="close-modal" onclick="closeContato()">&times;</span>
+            <div class="contact-icons">
+                <a href="https://www.instagram.com/dacruzneryfranca" target="_blank" class="icon instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
 
-        <h2>Entre em contato</h2>
+                <a href="https://tiktok.com" target="_blank" class="icon tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
 
-        <div class="contact-icons">
+                <a href="mailto:contato.cuidadoresdeouro@gmail.com" class="icon email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
 
-        <a href="https://www.instagram.com/dacruzneryfranca" target="_blank" class="icon instagram">
-        <i class="fab fa-instagram"></i>
-        <span>Instagram</span>
-        </a>
+                <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." target="_blank" class="icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
 
-        <a href="https://tiktok.com" target="_blank" class="icon tiktok">
-        <i class="fab fa-tiktok"></i>
-        <span>TikTok</span>
-        </a>
+            <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
+                <div class="form-group">
+                    <label>Nome completo</label>
+                    <input type="text" name="Nome" placeholder="Digite seu nome" required>
+                </div>
 
-        <a href="mailto:contato.cuidadoresdeouro@gmail.com" class="icon email">
-        <i class="fas fa-envelope"></i>
-        <span>Email</span>
-        </a>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="Email" placeholder="Digite seu email" required>
+                </div>
 
-        <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." target="_blank" class="icon whatsapp">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp</span>
-        </a>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" name="Telefone" placeholder="(00) 00000-0000" required>
+                </div>
 
+                <div class="form-group">
+                    <label>Mensagem</label>
+                    <textarea name="Mensagem" placeholder="Digite sua mensagem" required></textarea>
+                </div>
+
+                <input type="hidden" name="_next" value="obrigado.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Novo contato do site Cuidadores de Ouro">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Recebemos sua mensagem! Em breve entraremos em contato.">
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Enviar mensagem
+                </button>
+            </form>
         </div>
-
-        <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
-
-        <div class="form-group">
-        <label>Nome completo</label>
-        <input type="text" name="Nome" placeholder="Digite seu nome" required>
-        </div>
-
-        <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="Email" placeholder="Digite seu email" required>
-        </div>
-
-        <div class="form-group">
-        <label>Telefone</label>
-        <input type="tel" name="Telefone" placeholder="(00) 00000-0000" required>
-        </div>
-
-        <div class="form-group">
-        <label>Mensagem</label>
-        <textarea name="Mensagem" placeholder="Digite sua mensagem" required></textarea>
-        </div>
-
-        <input type="hidden" name="_next" value="obrigado.html">
-        <input type="hidden" name="_captcha" value="false">
-
-        <input type="hidden" name="_subject" value="Novo contato do site Cuidadores de Ouro">
-
-        <input type="hidden" name="_template" value="table">
-
-        <button type="submit" class="submit-btn">
-        <i class="fas fa-paper-plane"></i> Enviar mensagem
-        </button>
-
-        </form>
-
-        </div>
-        </div>
+    </div>
 
     <footer class="footer">
         <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
@@ -1045,17 +1025,6 @@ background:linear-gradient(45deg,#25d366,#128C7E);
             const modal = document.getElementById(`modal${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
-
-        function submitForm(event, tipo) {
-            event.preventDefault();
-            
-            alert(`Formulário enviado com sucesso! Entraremos em contato em breve.`);
-            closeModal(tipo);
-            
-            document.getElementById(`form${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`).reset();
-            
-            return false;
         }
 
         window.onclick = function(event) {
