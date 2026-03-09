@@ -416,6 +416,21 @@
             transition: border-color 0.3s ease;
         }
 
+        /* Estilos para campos de número */
+        .form-group input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        
+        .form-group input[type="number"]::-webkit-outer-spin-button,
+        .form-group input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .form-group input[type="tel"] {
+            -moz-appearance: textfield;
+        }
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -791,7 +806,7 @@
             <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
                 <div class="form-group">
                     <label>Nome completo</label>
-                    <input type="text" name="Nome" required>
+                    <input type="text" name="Nome" required pattern="[A-Za-zÀ-ú\s]+" title="Apenas letras e espaços">
                 </div>
 
                 <div class="form-group">
@@ -801,12 +816,12 @@
 
                 <div class="form-group">
                     <label>Telefone</label>
-                    <input type="tel" name="Telefone" required>
+                    <input type="tel" name="Telefone" required pattern="[0-9]+" title="Apenas números" placeholder="Apenas números" onkeypress="return onlyNumbers(event)">
                 </div>
 
                 <div class="form-group">
                     <label>Idade</label>
-                    <input type="number" name="Idade" min="18" max="80" required>
+                    <input type="number" name="Idade" min="18" max="80" required inputmode="numeric" pattern="[0-9]+" onkeypress="return onlyNumbers(event)">
                 </div>
 
                 <div class="form-group">
@@ -864,7 +879,7 @@
             <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
                 <div class="form-group">
                     <label>Nome completo</label>
-                    <input type="text" name="Nome" required>
+                    <input type="text" name="Nome" required pattern="[A-Za-zÀ-ú\s]+" title="Apenas letras e espaços">
                 </div>
 
                 <div class="form-group">
@@ -874,7 +889,7 @@
 
                 <div class="form-group">
                     <label>Telefone</label>
-                    <input type="tel" name="Telefone" required>
+                    <input type="tel" name="Telefone" required pattern="[0-9]+" title="Apenas números" placeholder="Apenas números" onkeypress="return onlyNumbers(event)">
                 </div>
 
                 <div class="form-group">
@@ -890,7 +905,7 @@
 
                 <div class="form-group">
                     <label>Idade do idoso</label>
-                    <input type="number" name="Idade do Idoso" min="40" max="120" required>
+                    <input type="number" name="Idade do Idoso" min="40" max="120" required inputmode="numeric" pattern="[0-9]+" onkeypress="return onlyNumbers(event)">
                 </div>
 
                 <div class="form-group">
@@ -977,7 +992,7 @@
             <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
                 <div class="form-group">
                     <label>Nome completo</label>
-                    <input type="text" name="Nome" placeholder="Digite seu nome" required>
+                    <input type="text" name="Nome" placeholder="Digite seu nome" required pattern="[A-Za-zÀ-ú\s]+" title="Apenas letras e espaços">
                 </div>
 
                 <div class="form-group">
@@ -987,7 +1002,7 @@
 
                 <div class="form-group">
                     <label>Telefone</label>
-                    <input type="tel" name="Telefone" placeholder="(00) 00000-0000" required>
+                    <input type="tel" name="Telefone" placeholder="Apenas números" required pattern="[0-9]+" title="Apenas números" onkeypress="return onlyNumbers(event)">
                 </div>
 
                 <div class="form-group">
@@ -1051,6 +1066,16 @@
 
         function closeContato() {
             document.getElementById("modalContato").style.display = "none";
+        }
+
+        // Função para permitir apenas números
+        function onlyNumbers(event) {
+            var charCode = (event.which) ? event.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                event.preventDefault();
+                return false;
+            }
+            return true;
         }
     </script>
 </body>
