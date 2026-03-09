@@ -18,7 +18,7 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-
+        
         /* Cores pastel: verde e laranja */
         :root {
             --verde-pastel: #417165;
@@ -559,11 +559,74 @@
                 font-size: 1.1rem;
             }
         }
+        /* BOTÃO MENU */
+.menu-btn{
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 3000;
+    cursor: pointer;
+}
+
+.menu-btn span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #417165;
+    margin: 6px 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* MENU LATERAL */
+.side-menu{
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: linear-gradient(180deg,#417165,#c97248);
+    padding-top: 100px;
+    transition: 0.4s;
+    z-index: 2500;
+}
+
+.side-menu a{
+    display: block;
+    padding: 18px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.side-menu a:hover{
+    background: rgba(255,255,255,0.2);
+    padding-left: 35px;
+}
+
+.side-menu.open{
+    left:0;
+}
     </style>
 </head>
 <body>
+        <!-- Botão Menu -->
+<div class="menu-btn" onmouseover="openMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Menu Lateral -->
+<div id="sideMenu" class="side-menu">
+    <a href="cuidadores.html">O que são os Cuidadores de Ouro</a>
+    <a href="dacruz.html">Quem é Dacruz Nery</a>
+    <a href="curso.html">Cursos completos</a>
+    <a href="#" onclick="openContato()">Contatos</a>
+</div>
     <header class="header">
-    <img src="logo sem fundo.png" alt="Cuidadores de Ouro" class="logo-header">
+    <img src="cuidadoresdeouro.png" alt="Cuidadores de Ouro" class="logo-header">
 </header>
 
     <div class="container">
@@ -806,6 +869,74 @@
                 }
             }
         }
+
+        function openMenu(){
+document.getElementById("sideMenu").classList.toggle("open")
+}
+
+function openContato(){
+document.getElementById("modalContato").style.display="flex"
+}
+
+function closeContato(){
+document.getElementById("modalContato").style.display="none"
+}
+
     </script>
+
+
+        <!-- Modal Contato -->
+<div id="modalContato" class="modal">
+<div class="modal-content">
+
+<span class="close-modal" onclick="closeContato()">&times;</span>
+
+<h2>Entre em contato</h2>
+
+<div style="text-align:center;margin-bottom:20px;">
+
+<a href="https://instagram.com" target="_blank">
+<i class="fab fa-instagram" style="font-size:28px;margin:10px;"></i>
+</a>
+
+<a href="https://tiktok.com" target="_blank">
+<i class="fab fa-tiktok" style="font-size:28px;margin:10px;"></i>
+</a>
+
+<a href="mailto:seuemail@gmail.com">
+<i class="fas fa-envelope" style="font-size:28px;margin:10px;"></i>
+</a>
+
+<a href="https://wa.me/5511999999999">
+<i class="fab fa-whatsapp" style="font-size:28px;margin:10px;"></i>
+</a>
+
+</div>
+
+<form>
+
+<div class="form-group">
+<label>Nome</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" required>
+</div>
+
+<div class="form-group">
+<label>Mensagem</label>
+<textarea required></textarea>
+</div>
+
+<button class="submit-btn">Enviar mensagem</button>
+
+</form>
+
+</div>
+</div>
+
 </body>
+
 </html>
