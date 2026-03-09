@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>O que são os Cuidadores de Ouro</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+:root{
+--verde:#417165;
+--laranja:#c97248;
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Segoe UI, Arial;
+background:#f8f8f8;
+color:#444;
+overflow-x:hidden;
+}
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+position:relative;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("cuidadoresdeouro.png");
+background-size:50%;
+background-position:center;
+filter:blur(5px) brightness(0.5);
+z-index:0;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#417165aa,#c97248aa);
+z-index:1;
+}
+
+.hero h1{
+font-size:4.5rem;
+font-weight:800;
+letter-spacing:2px;
+position:relative;
+z-index:2;
+text-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.hero h1::after{
+content:"";
+display:block;
+width:820px;
+height:6px;
+margin:15px auto 0;
+background:linear-gradient(90deg,#417165,#c97248);
+border-radius:10px;
+}
+
+.intro{
+max-width:900px;
+margin:auto;
+padding:80px 20px;
+text-align:center;
+}
+
+.intro h2{
+color:var(--verde);
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.intro p{
+font-size:1.2rem;
+line-height:1.7;
+color:#555;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+.section{
+display:flex;
+align-items:center;
+gap:40px;
+margin-bottom:120px;
+flex-wrap:wrap;
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+}
+
+.section.active{
+opacity:1;
+transform:translateY(0);
+}
+
+.text{
+flex:1;
+min-width:280px;
+}
+
+.text h2{
+color:var(--verde);
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.text p{
+line-height:1.6;
+font-size:1.1rem;
+}
+
+.image{
+flex:1;
+min-width:280px;
+border-radius:12px;
+overflow:hidden;
+}
+
+.image img{
+width:100%;
+display:block;
+border-radius:12px;
+transition:0.6s;
+}
+
+.section:hover img{
+transform:scale(1.05);
+}
+
+.importancia{
+background:white;
+padding:50px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:var(--laranja);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card i{
+font-size:35px;
+color:var(--laranja);
+margin-bottom:10px;
+}
+
+.parallax{
+height:350px;
+background-image:url("idoso-feliz.jpg");
+background-attachment:fixed;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:2rem;
+text-align:center;
+position:relative;
+}
+
+.parallax::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:#ffffff;
+}
+
+.parallax span{
+position:relative;
+z-index:2;
+font-weight:bold;
+
+background:linear-gradient(90deg,#417165,#c97248,#e6b17e);
+
+background-clip:text;
+-webkit-background-clip:text;
+
+color:transparent;
+-webkit-text-fill-color:transparent;
+}
+
+.cta{
+padding:80px 20px;
+text-align:center;
+}
+
+.cta h2{
+font-size:2.2rem;
+color:var(--verde);
+}
+
+.cta button{
+margin-top:25px;
+padding:15px 40px;
+border:none;
+border-radius:40px;
+background:linear-gradient(135deg,#417165,#c97248);
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.4s;
+}
+
+.cta button:hover{
+transform:scale(1.08);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.section{
+flex-direction:column;
+text-align:center;
+}
+
+.parallax{
+font-size:1.4rem;
+padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<h1>Cuidadores de Idosos</h1>
+</section>
+
+<section class="intro">
+<h2>Sobre a profissão</h2>
+<p>
+O cuidado com idosos é uma das profissões mais humanas e necessárias da sociedade moderna.
+Com o aumento da expectativa de vida, cresce também a importância de profissionais preparados
+para oferecer cuidado, segurança e qualidade de vida às pessoas da terceira idade.
+</p>
+</section>
+
+<div class="container">
+
+<div class="section">
+
+<div class="text">
+
+<h2>O que faz um cuidador de idosos?</h2>
+
+<p>
+O cuidador de idosos é o profissional responsável por auxiliar pessoas idosas em suas atividades diárias, promovendo conforto, segurança e bem-estar.
+
+Esse profissional pode ajudar em tarefas como higiene pessoal, alimentação, mobilidade, administração de medicamentos, acompanhamento em consultas médicas e principalmente oferecer companhia e apoio emocional.
+
+Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e dedicação.
+</p>
+
+</div>
+
+<div class="image">
+<img src="cuidando.png">
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="image">
+<img src="cuidando2.png">
+</div>
+
+<div class="text">
+
+<h2>A importância desse profissional</h2>
+
+<p>
+Com o envelhecimento da população, o papel do cuidador tornou-se essencial para garantir dignidade e qualidade de vida aos idosos.
+
+Muitas famílias não possuem disponibilidade de tempo ou preparo técnico para oferecer todos os cuidados necessários.
+
+É nesse momento que o cuidador atua como um apoio fundamental, trazendo segurança para a família e conforto para o idoso.
+</p>
+
+</div>
+
+</div>
+
+<div class="importancia">
+
+<h2 style="text-align:center;color:var(--verde)">Por que os cuidadores são tão importantes?</h2>
+
+<div class="cards">
+
+<div class="card">
+<i class="fas fa-heart"></i>
+<h4>Humanização</h4>
+<p>Promovem cuidado com respeito e empatia.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-user-shield"></i>
+<h4>Segurança</h4>
+<p>Garantem assistência e prevenção de riscos.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-smile"></i>
+<h4>Bem-estar</h4>
+<p>Proporcionam companhia e apoio emocional.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-home"></i>
+<h4>Tranquilidade</h4>
+<p>Oferecem segurança para toda a família.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="parallax">
+<span>Cuidar é um ato de amor e responsabilidade.</span>
+</div>
+
+<div class="cta">
+
+<h2>Quer fazer parte dessa profissão?</h2>
+
+<p>Descubra como se tornar um cuidador profissional e transformar vidas.</p>
+
+<button onclick="window.location.href='curso.html'">
+Conhecer o curso
+</button>
+
+</div>
+
+<script>
+
+function reveal(){
+
+var sections=document.querySelectorAll(".section")
+
+sections.forEach(sec=>{
+
+var top=sec.getBoundingClientRect().top
+var trigger=window.innerHeight-100
+
+if(top<trigger){
+sec.classList.add("active")
+}
+
+})
+
+}
+
+window.addEventListener("scroll",reveal)
+
+reveal()
+
+</script>
+
+</body>
+</html>
