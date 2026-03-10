@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Integrantes - Cuidador de Ouro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --verde: #417165;
+            --laranja: #c97248;
+            --texto-escuro: #4a4a4a;
+            --verde-claro: rgba(65, 113, 101, 0.1);
+            --laranja-claro: rgba(201, 114, 72, 0.1);
+        }
+
+        /* HERO COM EFEITO CORTADO */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            animation: slideDown 1s ease-out;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("cuidadoresdeouro.png");
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(8px) brightness(0.4);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #417165cc, #c97248cc);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1::after {
+            content: "";
+            display: block;
+            width: 400px;
+            max-width: 90%;
+            height: 6px;
+            margin: 20px auto 0;
+            background: linear-gradient(90deg, white, #f8f8f8);
+            border-radius: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* BOTÃO MENU */
+        .menu-btn {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 3000;
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: var(--verde);
+            margin: 6px 0;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        .menu-btn:hover span:nth-child(1) {
+            transform: translateX(6px);
+        }
+
+        .menu-btn:hover span:nth-child(2) {
+            transform: translateX(-6px);
+        }
+
+        .menu-btn:hover span:nth-child(3) {
+            transform: translateX(6px);
+        }
+
+        /* MENU LATERAL */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            padding-top: 100px;
+            background: var(--verde);
+            transition: 0.5s;
+            z-index: 2500;
+            border-top-right-radius: 120px;
+            border-bottom-right-radius: 120px;
+            box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .side-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 30px 0 0 30px;
+        }
+
+        .side-menu a i {
+            font-size: 20px;
+        }
+
+        .side-menu a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .side-menu.open {
+            left: 0;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .breadcrumbs {
+            padding: 1rem 2rem;
+            background: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumbs a {
+            color: var(--verde);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--laranja);
+            text-decoration: underline;
+        }
+
+        .breadcrumbs .separator {
+            color: var(--laranja);
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+
+        .breadcrumbs .current {
+            color: var(--laranja);
+            font-weight: 500;
+        }
+
+        /* SEÇÃO DE BOAS-VINDAS */
+        .welcome-section {
+            max-width: 900px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .welcome-title {
+            font-size: 2.5rem;
+            color: var(--verde);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .welcome-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--verde), var(--laranja));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .welcome-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--texto-escuro);
+            background: linear-gradient(135deg, var(--verde-claro), var(--laranja-claro));
+            padding: 2.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .welcome-text strong {
+            color: var(--laranja);
+            font-weight: 700;
+        }
+
+        /* CONTAINER DOS INTEGRANTES */
+        .integrantes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* CARDS DOS INTEGRANTES */
+        .integrante-card {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 8rem;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .integrante-card:nth-child(even) {
+            flex-direction: row-reverse;
+            transform: translateX(100px);
+        }
+
+        .integrante-card.reveal {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* EFEITO DE LINHA CONECTANDO OS CARDS */
+        .integrante-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 4rem;
+            background: linear-gradient(180deg, var(--laranja), transparent);
+        }
+
+        /* IMAGEM DO INTEGRANTE */
+        .integrante-imagem {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .integrante-imagem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 113, 101, 0.3), rgba(201, 114, 72, 0.3));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .integrante-card:hover .integrante-imagem::before {
+            opacity: 1;
+        }
+
+        .integrante-card:hover .integrante-imagem {
+            transform: scale(1.02);
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .integrante-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .integrante-card:hover .integrante-imagem img {
+            transform: scale(1.1);
+        }
+
+        /* INFO DO INTEGRANTE */
+        .integrante-info {
+            flex: 1;
+            padding: 2rem;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .integrante-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--verde), var(--laranja));
+        }
+
+        .integrante-card:nth-child(even) .integrante-info::before {
+            left: auto;
+            right: 0;
+        }
+
+        .integrante-card:hover .integrante-info {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .integrante-nome {
+            font-size: 2.2rem;
+            color: var(--verde);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .integrante-nome::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--laranja);
+            margin: 0.5rem 0 1rem;
+            border-radius: 2px;
+        }
+
+        .integrante-card:nth-child(even) .integrante-nome::after {
+            margin-left: auto;
+        }
+
+        .integrante-titulo {
+            font-size: 1.2rem;
+            color: var(--laranja);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .integrante-descricao {
+            color: var(--texto-escuro);
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .integrante-descricao p {
+            margin-bottom: 1.2rem;
+        }
+
+        .integrante-descricao strong {
+            color: var(--verde);
+            font-weight: 700;
+        }
+
+        /* BOTÕES FLUTUANTES */
+        .social-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            transition: 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128C7E);
+        }
+
+        .float-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
+            color: var(--texto-escuro);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 6rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: var(--texto-escuro);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--laranja);
+        }
+
+        .footer a:hover {
+            color: var(--laranja);
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 968px) {
+            .integrante-card {
+                flex-direction: column !important;
+                gap: 2rem;
+                margin-bottom: 5rem;
+                transform: translateX(0) !important;
+            }
+
+            .integrante-card:nth-child(even) {
+                flex-direction: column !important;
+            }
+
+            .integrante-card:not(:last-child)::after {
+                bottom: -2.5rem;
+                height: 2.5rem;
+            }
+
+            .integrante-nome::after {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .integrante-info {
+                text-align: center;
+            }
+
+            .integrante-info::before {
+                width: 100%;
+                height: 5px;
+                top: 0;
+                left: 0 !important;
+                right: 0 !important;
+                background: linear-gradient(90deg, var(--verde), var(--laranja));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .welcome-title {
+                font-size: 2rem;
+            }
+
+            .welcome-text {
+                font-size: 1.1rem;
+                padding: 1.5rem;
+            }
+
+            .integrante-nome {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id="sideMenu" class="side-menu" onmouseleave="closeMenu()">
+        <div class="menu-close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="index.html">
+            <i class="fas fa-home"></i> Página inicial
+        </a>
+        <a href="cuidadores.html">
+            <i class="fas fa-hands-helping"></i> O que são os Cuidadores
+        </a>
+        <a href="integrantes.html">
+            <i class="fas fa-user"></i> Conheça nossos cuidadores
+        </a>
+        <a href="curso.html">
+            <i class="fas fa-graduation-cap"></i> Curso completo
+        </a>
+        <a href="#" onclick="openContato()">
+            <i class="fas fa-envelope"></i> Contatos
+        </a>
+        <a href="faq.html">
+            <i class="fas fa-question-circle"></i> Perguntas Frequentes
+        </a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nossos Integrantes</h1>
+            <p>Conheça as pessoas incríveis que estão por trás do cuidado que transforma vidas</p>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <a href="index.html">🏠 Home</a>
+        <span class="separator">›</span>
+        <span class="current">Nossos Integrantes</span>
+    </div>
+
+    <section class="welcome-section">
+        <h2 class="welcome-title">Que bom que você está aqui! 👋</h2>
+        <div class="welcome-text">
+            <p>Se você chegou até esta página, é porque realmente se importa com a <strong>qualidade do cuidado</strong> que deseja oferecer ou receber. E isso é lindo!</p>
+            <p>Aqui você vai conhecer as pessoas que estão <strong>à frente dessa missão</strong> de transformar vidas através do cuidado com idosos. Pessoas que dedicaram suas carreiras, seus corações e suas experiências para criar um método que realmente funciona.</p>
+            <p><strong>Cada integrante</strong> tem uma história única, mas todos compartilham o mesmo propósito: formar cuidadores de excelência e garantir que cada idoso receba o respeito, o carinho e a dignidade que merece.</p>
+        </div>
+    </section>
+
+    <div class="integrantes-container">
+        <!-- DACRUZ NERY -->
+        <div class="integrante-card">
+            <div class="integrante-imagem">
+                <img src="colaboradora1.png" alt="Dacruz Nery - Fundadora do Cuidador de Ouro">
+            </div>
+            <div class="integrante-info">
+                <h3 class="integrante-nome">Dacruz Nery</h3>
+                <div class="integrante-titulo">Fundadora & Especialista em Cuidados</div>
+                <div class="integrante-descricao">
+                    <p><strong>15+ anos</strong> dedicados ao cuidado e à capacitação de cuidadores de idosos. Sua paixão pelo tema começou por amor ao pai, e hoje transforma vidas ao formar cuidadores de excelência.</p>
+                    <p>Fundou o curso <strong>"Cuidador de Ouro"</strong> para ensinar, com ética e dedicação, técnicas de cuidado, marketing pessoal e independência financeira.</p>
+                    <p>Além disso, lutou pela valorização da profissão, contribuindo para a <strong>aprovação da PEC dos empregados domésticos</strong> e escrevendo um livro sobre organização e direitos trabalhistas. <strong>Seu propósito é guiar cada aluno na construção de uma carreira sólida.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MARIA CLARA (exemplo genérico) -->
+        <div class="integrante-card">
+            <div class="integrante-imagem">
+                <img src="maria.png" alt="Carmem Nery - Função/Especialidade">
+            </div>
+            <div class="integrante-info">
+                <h3 class="integrante-nome">Carmem Nery</h3>
+                <div class="integrante-titulo">Função/Especialidade</div>
+                <div class="integrante-descricao">
+                    <p>TEXTO DO INTEGRANTE</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOÃO PEDRO (exemplo genérico) -->
+        <div class="integrante-card">
+            <div class="integrante-imagem">
+                <img src="joao.png" alt="Integrante 03 - Função/Especialidade">
+            </div>
+            <div class="integrante-info">
+                <h3 class="integrante-nome">Integrante 03 </h3>
+                <div class="integrante-titulo">Função/Especialidade</div>
+                <div class="integrante-descricao">
+                    <p>TEXTO DO INTEGRANTE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-float">
+        <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre os integrantes do Cuidador de Ouro." class="float-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Modal Contato (mesmo das outras páginas) -->
+    <div id="modalContato" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: white; padding: 2rem; border-radius: 20px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; position: relative;">
+            <span class="close-modal" onclick="closeContato()" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; cursor: pointer; color: #999;">&times;</span>
+            <h2 style="color: var(--texto-escuro); margin-bottom: 1.5rem; font-size: 2rem; text-align: center;">Entre em contato</h2>
+            <div class="contact-icons" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/dacruzneryfranca" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#fd5949,#d6249f,#285AEB);">
+                    <i class="fab fa-instagram"></i>
+                    <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Instagram</span>
+                </a>
+                <a href="mailto:contato.cuidadoresdeouro@gmail.com" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#ff7b00,#ffb347);">
+                    <i class="fas fa-envelope"></i>
+                    <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Email</span>
+                </a>
+                <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#25d366,#128C7E);">
+                    <i class="fab fa-whatsapp"></i>
+                    <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">WhatsApp</span>
+                </a>
+            </div>
+            <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Nome completo</label>
+                    <input type="text" name="Nome" placeholder="Digite seu nome" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Email</label>
+                    <input type="email" name="Email" placeholder="Digite seu email" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Telefone</label>
+                    <input type="tel" name="Telefone" placeholder="(00) 00000-0000" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Mensagem</label>
+                    <textarea name="Mensagem" placeholder="Digite sua mensagem" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; height: 100px; resize: vertical;"></textarea>
+                </div>
+                <input type="hidden" name="_next" value="https://cuidadordeidoso.vercel.app/obrigado.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Novo contato do site Cuidadores de Ouro">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Recebemos sua mensagem! Em breve entraremos em contato.">
+                <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, var(--verde-pastel) 0%, var(--laranja-pastel) 100%); color: #ffffff; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease;">
+                    <i class="fas fa-paper-plane"></i> Enviar mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
+        <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
+    </footer>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").classList.toggle("open");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").classList.remove("open");
+        }
+
+        function openContato() {
+            document.getElementById("modalContato").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeContato() {
+            document.getElementById("modalContato").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // ANIMAÇÃO REVEAL DINÂMICA - APARECE E DESAPARECE
+        function reveal() {
+            const cards = document.querySelectorAll('.integrante-card');
+            const windowHeight = window.innerHeight;
+            
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardBottom = card.getBoundingClientRect().bottom;
+                
+                // Verifica se o card está visível na tela
+                if (cardTop < windowHeight - 100 && cardBottom > 100) {
+                    card.classList.add('reveal');
+                } else {
+                    card.classList.remove('reveal'); // REMOVE A CLASSE QUANDO SAI DA TELA
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalContato');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
