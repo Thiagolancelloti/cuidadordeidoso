@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Cuidador de Ouro - Transforme sua carreira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --verde-pastel: #417165;
+            --verde-escuro: #417165;
+            --laranja-pastel: #c97248;
+            --laranja-escuro: #c97248;
+            --texto-escuro: #4a4a4a;
+            --verde-claro: rgba(65, 113, 101, 0.1);
+            --laranja-claro: rgba(201, 114, 72, 0.1);
+            --dourado: #e6b17e;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            animation: slideDown 1s ease-out;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("cuidadoresdeouro.png");
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(8px) brightness(0.4);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #417165cc, #c97248cc);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1::after {
+            content: "";
+            display: block;
+            width: 400px;
+            max-width: 90%;
+            height: 6px;
+            margin: 20px auto 0;
+            background: linear-gradient(90deg, white, #f8f8f8);
+            border-radius: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .menu-btn {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 3000;
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: var(--verde-pastel);
+            margin: 6px 0;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        .menu-btn:hover span:nth-child(1) {
+            transform: translateX(6px);
+        }
+
+        .menu-btn:hover span:nth-child(2) {
+            transform: translateX(-6px);
+        }
+
+        .menu-btn:hover span:nth-child(3) {
+            transform: translateX(6px);
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            padding-top: 100px;
+            background: rgba(65, 113, 101, 0.95);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: 0.5s;
+            z-index: 2500;
+            border-top-right-radius: 120px;
+            border-bottom-right-radius: 120px;
+            box-shadow: 10px 0 40px rgba(0,0,0,0.2);
+            border-right: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
+        }
+
+        .side-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 30px 0 0 30px;
+        }
+
+        .side-menu a i {
+            font-size: 20px;
+        }
+
+        .side-menu a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .side-menu.open {
+            left: 0;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-close:hover {
+            transform: rotate(90deg) scale(1.2);
+            background: rgba(255,255,255,0.3);
+        }
+
+        .breadcrumbs {
+            padding: 1rem 2rem;
+            background: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breadcrumbs a {
+            color: var(--verde-pastel);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--laranja-pastel);
+            text-decoration: underline;
+        }
+
+        .breadcrumbs .separator {
+            color: var(--laranja-pastel);
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+
+        .breadcrumbs .current {
+            color: var(--laranja-pastel);
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .indicado-section {
+            margin: 5rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .indicado-titulo {
+            font-size: 2.5rem;
+            color: var(--verde-pastel);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .indicado-titulo::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--verde-pastel), var(--laranja-pastel));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .indicado-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .indicado-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .indicado-card:nth-child(1) { animation-delay: 0.2s; }
+        .indicado-card:nth-child(2) { animation-delay: 0.4s; }
+        .indicado-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .indicado-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--verde-pastel), var(--laranja-pastel));
+        }
+
+        .indicado-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .indicado-icon {
+            font-size: 3rem;
+            color: var(--laranja-pastel);
+            margin-bottom: 1.5rem;
+        }
+
+        .indicado-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--texto-escuro);
+        }
+
+        .indicado-card strong {
+            color: var(--verde-pastel);
+            font-weight: 700;
+        }
+
+        .btn-aproveitar {
+            display: inline-block;
+            margin: 3rem auto 0;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--verde-pastel), var(--laranja-pastel));
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            animation: pulse 2s infinite;
+            text-align: center;
+            width: fit-content;
+            border: 2px solid white;
+        }
+
+        .btn-aproveitar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .depoimentos-section {
+            margin: 8rem 0;
+            text-align: center;
+        }
+
+        .depoimentos-titulo {
+            font-size: 2.5rem;
+            color: var(--laranja-pastel);
+            margin-bottom: 1rem;
+        }
+
+        .depoimentos-subtitulo {
+            font-size: 1.2rem;
+            color: var(--texto-escuro);
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .depoimento-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .depoimento-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .depoimento-imagem {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .depoimento-card:hover .depoimento-imagem {
+            transform: scale(1.1);
+        }
+
+        .depoimento-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 2rem 1rem 1rem;
+            text-align: left;
+        }
+
+        .depoimento-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .depoimento-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .expandir-hint {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--texto-escuro);
+        }
+
+        .expandir-hint i {
+            color: var(--laranja-pastel);
+            margin-right: 0.3rem;
+        }
+
+        .oportunidade-section {
+            background: linear-gradient(135deg, var(--verde-claro), var(--laranja-claro));
+            padding: 5rem 2rem;
+            border-radius: 50px;
+            margin: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oportunidade-section::before {
+            content: '✨';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 15rem;
+            opacity: 0.1;
+            transform: rotate(20deg);
+        }
+
+        .oportunidade-titulo {
+            font-size: 2.8rem;
+            color: var(--verde-pastel);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .oportunidade-texto {
+            font-size: 1.5rem;
+            color: var(--texto-escuro);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .oportunidade-destaque {
+            font-size: 2rem;
+            color: var(--laranja-pastel);
+            font-weight: 800;
+            margin: 1rem 0;
+            text-transform: uppercase;
+        }
+
+        .explicacao-section {
+            background: white;
+            padding: 4rem;
+            border-radius: 50px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+            margin: 5rem 0;
+            position: relative;
+        }
+
+        .explicacao-conteudo {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .explicacao-texto {
+            flex: 2;
+        }
+
+        .explicacao-texto h3 {
+            font-size: 2.2rem;
+            color: var(--verde-pastel);
+            margin-bottom: 1.5rem;
+        }
+
+        .explicacao-texto p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--texto-escuro);
+        }
+
+        .explicacao-destaque {
+            flex: 1;
+            text-align: center;
+            background: linear-gradient(135deg, var(--laranja-pastel), var(--dourado));
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            color: white;
+        }
+
+        .explicacao-destaque span {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .explicacao-destaque p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .precos-section {
+            background: white;
+            border-radius: 50px;
+            padding: 4rem;
+            margin: 5rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid var(--laranja-pastel);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .precos-section::before {
+            content: '🔥';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .precos-section::after {
+            content: '⭐';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+
+        .precos-titulo {
+            font-size: 2.2rem;
+            color: var(--verde-pastel);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .precos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .preco-parcelado {
+            background: var(--verde-pastel);
+            color: white;
+            padding: 3rem 4rem;
+            border-radius: 40px;
+            min-width: 320px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--laranja-pastel);
+        }
+
+        .preco-parcelado .valor-destaque {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .preco-parcelado .preco-vista-pequeno {
+            font-size: 1.4rem;
+            color: var(--laranja-pastel);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1.5rem 4rem;
+            background: linear-gradient(135deg, var(--laranja-pastel), var(--laranja-escuro));
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 60px;
+            box-shadow: 0 15px 30px rgba(201, 114, 72, 0.4);
+            transition: all 0.4s ease;
+            border: 3px solid white;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+
+        .btn-comprar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 25px 50px rgba(201, 114, 72, 0.6);
+        }
+
+        .garantia-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin: 6rem 0;
+            padding: 3rem;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .garantia-selo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .garantia-selo i {
+            font-size: 8rem;
+            color: var(--verde-pastel);
+            background: var(--verde-claro);
+            padding: 2rem;
+            border-radius: 50%;
+        }
+
+        .garantia-texto {
+            flex: 2;
+        }
+
+        .garantia-texto h3 {
+            font-size: 2.2rem;
+            color: var(--laranja-pastel);
+            margin-bottom: 1rem;
+        }
+
+        .garantia-texto p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--texto-escuro);
+        }
+
+        .garantia-texto strong {
+            color: var(--verde-pastel);
+        }
+
+        .diferenciais {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .diferencial-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 2rem;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .diferencial-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .diferencial-item i {
+            font-size: 3rem;
+            color: var(--laranja-pastel);
+            margin-bottom: 1rem;
+        }
+
+        .diferencial-item h4 {
+            font-size: 1.3rem;
+            color: var(--verde-pastel);
+            margin-bottom: 0.5rem;
+        }
+
+        .diferencial-item p {
+            color: var(--texto-escuro);
+        }
+
+        .social-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            transition: 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-btn.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128C7E);
+        }
+
+        .float-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
+            color: var(--texto-escuro);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 6rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: var(--texto-escuro);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--laranja-pastel);
+        }
+
+        .footer a:hover {
+            color: var(--laranja-pastel);
+        }
+
+        .modal-imagem {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 5000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal-imagem img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .modal-imagem .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: white;
+            font-size: 4rem;
+            cursor: pointer;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .explicacao-conteudo {
+                flex-direction: column;
+            }
+
+            .garantia-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+
+            .indicado-titulo {
+                font-size: 2rem;
+            }
+
+            .oportunidade-titulo {
+                font-size: 2rem;
+            }
+
+            .oportunidade-texto {
+                font-size: 1.2rem;
+            }
+
+            .oportunidade-destaque {
+                font-size: 1.5rem;
+            }
+            
+            .precos-container {
+                flex-direction: column;
+            }
+            
+            .preco-parcelado {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn-aproveitar {
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
+            }
+
+            .explicacao-section {
+                padding: 2rem;
+            }
+
+            .explicacao-texto h3 {
+                font-size: 1.8rem;
+            }
+
+            .explicacao-texto p {
+                font-size: 1.1rem;
+            }
+            
+            .precos-section {
+                padding: 2rem 1rem;
+            }
+            
+            .preco-parcelado .valor-destaque {
+                font-size: 2.5rem;
+            }
+            
+            .btn-comprar {
+                font-size: 1.5rem;
+                padding: 1.2rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id="sideMenu" class="side-menu" onmouseleave="closeMenu()">
+        <div class="menu-close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="index.html">
+            <i class="fas fa-home"></i> Página inicial
+        </a>
+        <a href="cuidadores.html">
+            <i class="fas fa-hands-helping"></i> O que são os Cuidadores
+        </a>
+        <a href="integrantes.html">
+            <i class="fas fa-user"></i> Conheça nossos cuidadores
+        </a>
+        <a href="curso.html">
+            <i class="fas fa-graduation-cap"></i> Curso completo
+        </a>
+        <a href="#" onclick="openContato()">
+            <i class="fas fa-envelope"></i> Contatos
+        </a>
+        <a href="faq.html">
+            <i class="fas fa-question-circle"></i> Perguntas Frequentes
+        </a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cuidador de Ouro</h1>
+            <p>O curso completo para você transformar sua paixão em profissão</p>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <a href="index.html">🏠 Home</a>
+        <span class="separator">›</span>
+        <span class="current">Curso Completo</span>
+    </div>
+
+    <div class="container">
+        <section class="indicado-section">
+            <h2 class="indicado-titulo">O curso Cuidador de Ouro é indicado para você que...</h2>
+            
+            <div class="indicado-grid">
+                <div class="indicado-card">
+                    <div class="indicado-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p>Está cansada da rotina desgastante e busca uma oportunidade que proporcione <strong>flexibilidade de horário</strong>.</p>
+                </div>
+
+                <div class="indicado-card">
+                    <div class="indicado-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <p>Se sente insegura financeiramente e quer aproveitar o <strong>crescimento do mercado de cuidadores de idosos</strong>.</p>
+                </div>
+
+                <div class="indicado-card">
+                    <div class="indicado-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <p>Já trabalha na área e quer <strong>aperfeiçoar suas habilidades</strong> para crescer ainda mais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos-section">
+            <h2 class="depoimentos-titulo">Confira nossos depoimentos!</h2>
+            <p class="depoimentos-subtitulo">Clique nas imagens para expandir*</p>
+
+            <div class="depoimentos-grid">
+                <div class="depoimento-card" onclick="expandirImagem('depoimento 1.png')">
+                    <img src="depoimento 1.png" alt="Depoimento 1" class="depoimento-imagem">
+                    <div class="depoimento-overlay">
+                        <h4>Maria Silva</h4>
+                        <p>"Mudou minha vida completamente!"</p>
+                    </div>
+                </div>
+
+                <div class="depoimento-card" onclick="expandirImagem('depoimento 2.png')">
+                    <img src="depoimento 2.png" alt="Depoimento 2" class="depoimento-imagem">
+                    <div class="depoimento-overlay">
+                        <h4>Ana Oliveira</h4>
+                        <p>"Hoje tenho independência financeira"</p>
+                    </div>
+                </div>
+
+                <div class="depoimento-card" onclick="expandirImagem('depoimento 3.png')">
+                    <img src="depoimento 3.png" alt="Depoimento 3" class="depoimento-imagem">
+                    <div class="depoimento-overlay">
+                        <h4>Cláudia Santos</h4>
+                        <p>"Melhor decisão que tomei"</p>
+                    </div>
+                </div>
+
+                <div class="depoimento-card" onclick="expandirImagem('depoimento 4.png')">
+                    <img src="depoimento 4.png" alt="Depoimento 4" class="depoimento-imagem">
+                    <div class="depoimento-overlay">
+                        <h4>Patrícia Lima</h4>
+                        <p>"Recomendo de olhos fechados!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandir-hint">
+                <i class="fas fa-mouse-pointer"></i> Clique nas imagens para ampliar
+            </div>
+        </section>
+
+        <section class="oportunidade-section">
+            <h2 class="oportunidade-titulo">Essa é a oportunidade perfeita!</h2>
+            <p class="oportunidade-texto">
+                Aumente seus ganhos e ofereça uma vida melhor para sua família!
+            </p>
+            <div class="oportunidade-destaque">
+                OFERTA POR TEMPO LIMITADO!
+            </div>
+        </section>
+
+        <section class="precos-section">
+            <h2 class="precos-titulo">Invista no seu futuro</h2>
+            
+            <div class="precos-container">
+                <div class="preco-parcelado">
+                    <div class="valor-destaque">12x de R$ 51,40</div>
+                    <div class="preco-vista-pequeno">Ou R$ 497,00 à vista</div>
+                </div>
+            </div>
+            
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" class="btn-comprar" target="_blank">
+                GARANTIR MINHA VAGA AGORA
+            </a>
+        </section>
+
+        <section class="explicacao-section">
+            <div class="explicacao-conteudo">
+                <div class="explicacao-texto">
+                    <h3>Vou te explicar tudo o que você precisa</h3>
+                    <p>
+                        Para atuar com <strong>segurança como cuidador de idosos</strong>, você precisa de conhecimento técnico, 
+                        habilidades práticas e, principalmente, confiança. No curso Cuidador de Ouro, 
+                        você aprende tudo isso e muito mais!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="garantia-section">
+            <div class="garantia-selo">
+                <img src="garantia.png" alt="7 dias de garantia" style="max-width: 100%; height: auto; border-radius: 20px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <i class="fas fa-shield-alt" style="display: none; font-size: 8rem; color: var(--verde-pastel); background: var(--verde-claro); padding: 2rem; border-radius: 50%;"></i>
+            </div>
+            <div class="garantia-texto">
+                <h3>Garantia 100% sem riscos!</h3>
+                <p>
+                    Você tem <strong>7 dias completos</strong> para acessar o conteúdo, assistir às aulas, 
+                    participar das atividades e sentir se esse é o caminho certo para você.
+                </p>
+                <p style="margin-top: 1rem;">
+                    Se nesse período perceber que não é o que esperava, basta nos enviar uma mensagem. 
+                    <strong>Devolvemos 100% do seu dinheiro</strong>, sem enrolação, sem formulários complicados 
+                    e sem perguntas embaraçosas. Simples assim.
+                </p>
+            </div>
+        </section>
+
+        <div class="diferenciais">
+            <div class="diferencial-item">
+                <i class="fab fa-whatsapp"></i>
+                <h4>Suporte no WhatsApp</h4>
+                <p>Tire dúvidas diretamente com nossa equipe</p>
+            </div>
+            <div class="diferencial-item">
+                <i class="fas fa-video"></i>
+                <h4>Conteúdos Ao Vivo</h4>
+                <p>Aulas interativas com especialistas</p>
+            </div>
+            <div class="diferencial-item">
+                <i class="fas fa-certificate"></i>
+                <h4>Certificado de Conclusão</h4>
+                <p>Válido em todo território nacional</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalImagem" class="modal-imagem" onclick="fecharImagem()">
+        <span class="close" onclick="fecharImagem()">&times;</span>
+        <img id="imagemExpandida" src="" alt="Imagem expandida">
+    </div>
+
+    <div class="social-float">
+        <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o curso Cuidador de Ouro." class="float-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <div id="modalContato" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+        <div class="modal-content" style="background: white; padding: 2rem; border-radius: 20px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; position: relative;">
+            <span class="close-modal" onclick="closeContato()" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; cursor: pointer; color: #999;">&times;</span>
+            <h2 style="color: var(--texto-escuro); margin-bottom: 1.5rem; font-size: 2rem; text-align: center;">Entre em contato</h2>
+            <div class="contact-icons" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/dacruzneryfranca" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#fd5949,#d6249f,#285AEB);">
+                    <i class="fab fa-instagram"></i>
+                    <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Instagram</span>
+                </a>
+                <a href="mailto:contato.cuidadoresdeouro@gmail.com" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#ff7b00,#ffb347);">
+                    <i class="fas fa-envelope"></i>
+                    <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Email</span>
+                </a>
+                <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o curso." target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#25d366,#128C7E);">
+                    <i class="fab fa-whatsapp"></i>
+                    <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">WhatsApp</span>
+                </a>
+            </div>
+            <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Nome completo</label>
+                    <input type="text" name="Nome" placeholder="Digite seu nome" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Email</label>
+                    <input type="email" name="Email" placeholder="Digite seu email" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Telefone</label>
+                    <input type="tel" name="Telefone" placeholder="(00) 00000-0000" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Mensagem</label>
+                    <textarea name="Mensagem" placeholder="Digite sua mensagem" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; height: 100px; resize: vertical;"></textarea>
+                </div>
+                <input type="hidden" name="_next" value="https://cuidadordeidoso.vercel.app/obrigado.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Interesse no curso Cuidador de Ouro">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Recebemos sua mensagem! Em breve entraremos em contato.">
+                <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, var(--verde-pastel) 0%, var(--laranja-pastel) 100%); color: #ffffff; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease;">
+                    <i class="fas fa-paper-plane"></i> Enviar mensagem
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
+        <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
+    </footer>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").classList.toggle("open");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").classList.remove("open");
+        }
+
+        function openContato() {
+            document.getElementById("modalContato").style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeContato() {
+            document.getElementById("modalContato").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function expandirImagem(src) {
+            document.getElementById('modalImagem').style.display = 'flex';
+            document.getElementById('imagemExpandida').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharImagem() {
+            document.getElementById('modalImagem').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalContato');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            const modalImagem = document.getElementById('modalImagem');
+            if (event.target == modalImagem) {
+                modalImagem.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function reveal() {
+            const elements = document.querySelectorAll('.indicado-card, .depoimento-card, .oportunidade-section, .explicacao-section, .garantia-section, .diferencial-item, .precos-section');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < windowHeight - 100 && elementBottom > 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+    </script>
+</body>
+</html>
