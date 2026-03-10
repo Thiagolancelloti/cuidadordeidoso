@@ -691,6 +691,144 @@
         .icon.whatsapp {
             background: linear-gradient(45deg,#25d366,#128C7E);
         }
+
+        /* ======================================== */
+/* ESTILOS PARA A NOVA SEÇÃO DE NOTÍCIAS */
+/* ======================================== */
+
+.noticias-section {
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    padding: 4rem 0;
+    margin: 3rem 0;
+    border-radius: 40px 40px 0 0;
+}
+
+.noticias-titulo {
+    text-align: center;
+    color: var(--texto-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    font-weight: 600;
+}
+
+.noticias-titulo:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--verde-pastel), var(--laranja-pastel));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* Container da imagem */
+.noticias-imagem-container {
+    max-width: 1200px;  /* AJUSTE AQUI - Largura máxima da imagem */
+    margin: 0 auto 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+/* Estilo da imagem */
+.noticias-imagem {
+    width: 100%;        /* OCUPA 100% DO CONTAINER */
+    height: auto;       /* ALTURA AUTOMÁTICA (mantém proporção) */
+    max-width: 1200px;  /* LARGURA MÁXIMA - AUMENTE/DIMINUA AQUI */
+    border-radius: 20px; /* BORDA ARREDONDADA - AJUSTE AQUI */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* SOMBRA */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Efeito hover na imagem */
+.noticias-imagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Container do texto */
+.noticias-texto-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Parágrafos do texto */
+.noticias-texto-container p {
+    color: var(--texto-escuro);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+/* Primeiro parágrafo (destaque) */
+.noticias-destaque {
+    font-size: 1.4rem !important;
+    font-weight: 600;
+    color: var(--verde-escuro) !important;
+    text-align: center !important;
+    margin-bottom: 2.5rem !important;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(65, 113, 101, 0.1), rgba(201, 114, 72, 0.1));
+    border-radius: 15px;
+    border-left: 5px solid var(--laranja-escuro);
+}
+
+/* Último parágrafo (chamada) */
+.noticias-chamada {
+    font-size: 1.3rem !important;
+    font-weight: 600;
+    color: var(--laranja-escuro) !important;
+    text-align: center !important;
+    margin-top: 2.5rem !important;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(201, 114, 72, 0.1), rgba(65, 113, 101, 0.1));
+    border-radius: 15px;
+    border-right: 5px solid var(--verde-escuro);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .noticias-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .noticias-imagem-container {
+        padding: 0 1rem;
+    }
+    
+    .noticias-imagem {
+        border-radius: 15px; /* BORDA MENOR NO CELULAR */
+    }
+    
+    .noticias-texto-container p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .noticias-destaque {
+        font-size: 1.2rem !important;
+        padding: 1rem;
+    }
+    
+    .noticias-chamada {
+        font-size: 1.1rem !important;
+        padding: 1rem;
+    }
+}
+
+/* Para telas muito grandes */
+@media (min-width: 1600px) {
+    .noticias-imagem {
+        max-width: 1400px; /* AUMENTA A IMAGEM EM TELAS GRANDES */
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -709,12 +847,12 @@
             <i class="fas fa-hands-helping"></i> O que são os Cuidadores
         </a>
 
-        <a href="dacruz.html">
-            <i class="fas fa-user"></i> Quem é Dacruz Nery
+        <a href="cuidadores.html">
+            <i class="fas fa-user"></i> Conheça nossos cuidadores
         </a>
 
         <a href="curso.html">
-            <i class="fas fa-graduation-cap"></i> Cursos completos
+            <i class="fas fa-graduation-cap"></i> Curso completo
         </a>
 
         <a href="#" onclick="openContato()">
@@ -750,12 +888,12 @@
             <h3><i class="fas fa-graduation-cap"></i> QUER SE TORNAR UM CUIDADOR PROFISSIONAL?</h3>
             <p>Aprenda tudo que você precisa para atuar na área com segurança, ética e conquistar sua independência financeira. Mesmo começando do zero!</p>
             
-            <a href="https://cuidadordeouro.com.br/" class="curso-link" target="_blank">
-                <i class="fas fa-external-link-alt"></i> ACESSAR CURSO COMPLETO
+            <a href="curso.html" class="curso-link">
+                <i class="fas fa-graduation-cap"></i> ACESSAR CURSO COMPLETO
             </a>
             
             <div class="link-explicacao">
-                <i class="fas fa-info-circle"></i> Este link leva ao site oficial do curso para formação de cuidadores
+                <i class="fas fa-info-circle"></i> Clique aqui para conhecer nosso curso completo para cuidadores
             </div>
         </div>
 
@@ -1008,10 +1146,53 @@
         </div>
     </div>
 
+    <!-- NOVA SEÇÃO DE NOTÍCIAS - ADICIONAR ANTES DO FOOTER -->
+<section class="noticias-section">
+    <div class="container">
+        <!-- Título da seção -->
+        <h2 class="noticias-titulo">Veja o que a <strong>mídia</strong> diz sobre o mercado de <span style="color: var(--verde-escuro);">cuidadores de idosos...</span></h2>
+        
+        <div class="noticias-imagem-container">
+            <img src="noticias.png" alt="Notícias sobre o mercado de cuidadores" class="noticias-imagem">
+            <!-- COMENTÁRIOS PARA AJUSTES DA IMAGEM:
+                 - Largura máxima: 100% da tela (responsivo)
+                 - Altura automática (mantém proporção)
+                 - Borda arredondada: 20px
+                 - Sombra suave para destaque
+                 - Para aumentar/diminuir, ajuste a largura no CSS abaixo
+                 - Recomendado: imagem com largura mínima de 1200px para boa qualidade
+            -->
+        </div>
+
+        <!-- Texto abaixo da imagem -->
+        <div class="noticias-texto-container">
+            <p class="noticias-destaque">
+                <strong> Brasil está envelhecendo rápido…</strong> Isso traz oportunidades incríveis para quem quer crescer profissionalmente.
+            </p>
+            
+            <p>
+                Com cada vez mais idosos precisando de cuidados, o mercado para cuidadores cresce como nunca. O melhor? <Strong>Você pode aproveitar essa oportunidade mesmo sem ter um diploma.
+            </p></Strong>
+            
+            <p>
+                Imagine poder trabalhar cuidando de pessoas, fazer a diferença na vida delas e ainda ter <span style="color:var(--laranja-escuro);">flexibilidade de horários para organizar o seu dia.</span> Essa é a realidade de muitos cuidadores que estão conquistando sua independência financeira e alcançando uma renda estável todos os meses.
+            </p>
+            
+            <p>
+                Além disso, ser cuidador de idosos é muito mais do que um trabalho: é uma profissão que transforma vidas. Você aprende técnicas de cuidado, se torna referência e ainda tem a chance de <strong>crescer em um mercado que valoriza quem busca ser melhor a cada dia.</strong>
+            </p>
+            
+            <p class="noticias-chamada">
+                Os jornais e especialistas já estão falando sobre essa demanda crescente. <strong>Você está preparada para aproveitar essa oportunidade?</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
     <footer class="footer">
         <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">"Prestar um Cuidado de Excelência"</p>
-        <p style="margin-top: 1rem;"><a href="https://cuidadordeouro.com.br/" target="_blank">← Conheça o curso completo para cuidadores</a></p>
+        <p style="margin-top: 1rem;"><a href="curso.html" target="_blank">← Conheça o curso completo para cuidadores</a></p>
     </footer>
 
     <script>
