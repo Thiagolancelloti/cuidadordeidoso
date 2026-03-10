@@ -20,8 +20,10 @@
         }
 
         :root {
-            --verde: #417165;
-            --laranja: #c97248;
+            --verde-pastel: #417165;
+            --verde-escuro: #417165;
+            --laranja-pastel: #c97248;
+            --laranja-escuro: #c97248;
             --texto-escuro: #4a4a4a;
             --verde-claro: rgba(65, 113, 101, 0.1);
             --laranja-claro: rgba(201, 114, 72, 0.1);
@@ -131,7 +133,7 @@
             display: block;
             width: 30px;
             height: 4px;
-            background: var(--verde);
+            background: var(--verde-pastel);
             margin: 6px 0;
             border-radius: 5px;
             transition: 0.4s;
@@ -149,7 +151,7 @@
             transform: translateX(6px);
         }
 
-        /* MENU LATERAL */
+        /* MENU LATERAL - COM EFEITO VIDRO CORRIGIDO */
         .side-menu {
             position: fixed;
             top: 0;
@@ -157,12 +159,18 @@
             width: 280px;
             height: 100%;
             padding-top: 100px;
-            background: var(--verde);
+            background: rgba(65, 113, 101, 0.95);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             transition: 0.5s;
             z-index: 2500;
             border-top-right-radius: 120px;
             border-bottom-right-radius: 120px;
-            box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 10px 0 40px rgba(0,0,0,0.2);
+            border-right: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+            mask-image: radial-gradient(white, black);
         }
 
         .side-menu a {
@@ -184,6 +192,7 @@
         .side-menu a:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
         }
 
         .side-menu.open {
@@ -204,6 +213,12 @@
             font-size: 20px;
             color: white;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-close:hover {
+            transform: rotate(90deg) scale(1.2);
+            background: rgba(255,255,255,0.3);
         }
 
         .breadcrumbs {
@@ -217,24 +232,24 @@
         }
 
         .breadcrumbs a {
-            color: var(--verde);
+            color: var(--verde-pastel);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .breadcrumbs a:hover {
-            color: var(--laranja);
+            color: var(--laranja-pastel);
             text-decoration: underline;
         }
 
         .breadcrumbs .separator {
-            color: var(--laranja);
+            color: var(--laranja-pastel);
             margin: 0 0.5rem;
             font-weight: bold;
         }
 
         .breadcrumbs .current {
-            color: var(--laranja);
+            color: var(--laranja-pastel);
             font-weight: 500;
         }
 
@@ -258,7 +273,7 @@
 
         .welcome-title {
             font-size: 2.5rem;
-            color: var(--verde);
+            color: var(--verde-pastel);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -269,7 +284,7 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--verde), var(--laranja));
+            background: linear-gradient(90deg, var(--verde-pastel), var(--laranja-pastel));
             margin: 1rem auto 0;
             border-radius: 2px;
         }
@@ -286,7 +301,7 @@
         }
 
         .welcome-text strong {
-            color: var(--laranja);
+            color: var(--laranja-pastel);
             font-weight: 700;
         }
 
@@ -328,7 +343,7 @@
             transform: translateX(-50%);
             width: 2px;
             height: 4rem;
-            background: linear-gradient(180deg, var(--laranja), transparent);
+            background: linear-gradient(180deg, var(--laranja-pastel), transparent);
         }
 
         /* IMAGEM DO INTEGRANTE */
@@ -395,7 +410,7 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: linear-gradient(180deg, var(--verde), var(--laranja));
+            background: linear-gradient(180deg, var(--verde-pastel), var(--laranja-pastel));
         }
 
         .integrante-card:nth-child(even) .integrante-info::before {
@@ -410,7 +425,7 @@
 
         .integrante-nome {
             font-size: 2.2rem;
-            color: var(--verde);
+            color: var(--verde-pastel);
             margin-bottom: 0.5rem;
             position: relative;
             display: inline-block;
@@ -421,7 +436,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background: var(--laranja);
+            background: var(--laranja-pastel);
             margin: 0.5rem 0 1rem;
             border-radius: 2px;
         }
@@ -432,7 +447,7 @@
 
         .integrante-titulo {
             font-size: 1.2rem;
-            color: var(--laranja);
+            color: var(--laranja-pastel);
             margin-bottom: 1.5rem;
             font-weight: 500;
             letter-spacing: 1px;
@@ -449,7 +464,7 @@
         }
 
         .integrante-descricao strong {
-            color: var(--verde);
+            color: var(--verde-pastel);
             font-weight: 700;
         }
 
@@ -500,13 +515,13 @@
             }
         }
 
-        /* FOOTER */
+        /* FOOTER CORRIGIDO - IGUAL AO DAS OUTRAS PÁGINAS */
         .footer {
             background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
             color: var(--texto-escuro);
             text-align: center;
             padding: 2rem;
-            margin-top: 6rem;
+            margin-top: 4rem;
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         }
 
@@ -520,11 +535,11 @@
             color: var(--texto-escuro);
             text-decoration: none;
             font-weight: bold;
-            border-bottom: 2px solid var(--laranja);
+            border-bottom: 2px solid var(--laranja-pastel);
         }
 
         .footer a:hover {
-            color: var(--laranja);
+            color: var(--laranja-pastel);
         }
 
         /* RESPONSIVIDADE */
@@ -560,7 +575,7 @@
                 top: 0;
                 left: 0 !important;
                 right: 0 !important;
-                background: linear-gradient(90deg, var(--verde), var(--laranja));
+                background: linear-gradient(90deg, var(--verde-pastel), var(--laranja-pastel));
             }
         }
 
@@ -658,34 +673,23 @@
             </div>
         </div>
 
-        <!-- MARIA CLARA (exemplo genérico) -->
-        <div class="integrante-card">
-            <div class="integrante-imagem">
-                <img src="maria.png" alt="Carmem Nery - Função/Especialidade">
-            </div>
-            <div class="integrante-info">
-                <h3 class="integrante-nome">Carmem Nery</h3>
-                <div class="integrante-titulo">Função/Especialidade</div>
-                <div class="integrante-descricao">
-                    <p>TEXTO DO INTEGRANTE</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- JOÃO PEDRO (exemplo genérico) -->
-        <div class="integrante-card">
-            <div class="integrante-imagem">
-                <img src="joao.png" alt="Integrante 03 - Função/Especialidade">
-            </div>
-            <div class="integrante-info">
-                <h3 class="integrante-nome">Integrante 03 </h3>
-                <div class="integrante-titulo">Função/Especialidade</div>
-                <div class="integrante-descricao">
-                    <p>TEXTO DO INTEGRANTE</p>
-                </div>
-            </div>
+     <div class="integrante-card">
+    <div class="integrante-imagem">
+        <img src="colaboradora2.png" alt="Carmen Nery - Gerente de Atendimento">
+    </div>
+    <div class="integrante-info">
+        <h3 class="integrante-nome">Carmen Nery</h3>
+        <div class="integrante-titulo">Gerente de Atendimento</div>
+        <div class="integrante-descricao">
+            <p><strong>+10 anos de experiência</strong> em cuidados de idosos e crianças. Carmen é o elo entre as famílias e nossa equipe de cuidadores.</p>
+            
+            <p>Realiza <strong>visitas presenciais</strong> para conhecer a rotina das famílias, avaliar necessidades e garantir que cada idoso receba o cuidado personalizado que merece. Seu olhar clínico e humano faz toda a diferença na hora de indicar o profissional ideal para cada caso.</p>
+            
+            <p>Além disso, oferece <strong>suporte contínuo</strong> às famílias e cuidadores, acompanhando de perto cada atendimento e assegurando que tudo esteja sempre em harmonia. Sua trajetória diversificada no cuidado (crianças e idosos) trouxe uma visão completa sobre as diferentes fases da vida.</p>
         </div>
     </div>
+</div>
+</div>
 
     <div class="social-float">
         <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre os integrantes do Cuidador de Ouro." class="float-btn whatsapp" target="_blank">
@@ -782,7 +786,7 @@
                 if (cardTop < windowHeight - 100 && cardBottom > 100) {
                     card.classList.add('reveal');
                 } else {
-                    card.classList.remove('reveal'); // REMOVE A CLASSE QUANDO SAI DA TELA
+                    card.classList.remove('reveal');
                 }
             });
         }
