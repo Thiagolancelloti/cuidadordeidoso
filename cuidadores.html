@@ -3,27 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>O que são os Cuidadores de Ouro</title>
-
-<!-- Meta tags para SEO -->
 <meta name="description" content="Conheça a profissão de cuidador de idosos: o que faz, importância e como se tornar um profissional qualificado.">
 <meta name="keywords" content="cuidador de idosos, profissão cuidador, cuidado de idosos, cuidador profissional">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 <style>
-
 :root{
 --verde:#417165;
 --laranja:#c97248;
 --texto-escuro: #4a4a4a;
 }
-
 *{
 box-sizing:border-box;
 }
-
 body{
 margin:0;
 font-family:Segoe UI, Arial;
@@ -31,8 +23,6 @@ background:#f8f8f8;
 color:#444;
 overflow-x:hidden;
 }
-
-/* HERO COM EFEITO CORTADO IGUAL AO INDEX */
 .hero{
 height:90vh;
 display:flex;
@@ -47,7 +37,6 @@ clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 animation: slideDown 1s ease-out;
 padding: 2rem;
 }
-
 .hero::before{
 content:"";
 position:absolute;
@@ -62,7 +51,6 @@ background-position:center;
 filter:blur(5px) brightness(0.5);
 z-index:0;
 }
-
 .hero::after{
 content:"";
 position:absolute;
@@ -71,7 +59,6 @@ height:100%;
 background:linear-gradient(135deg,#417165aa,#c97248aa);
 z-index:1;
 }
-
 .hero h1{
 font-size:4.5rem;
 font-weight:800;
@@ -80,7 +67,6 @@ position:relative;
 z-index:2;
 text-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
-
 .hero-content {
     max-width: 1200px;
     width: 90%;
@@ -89,7 +75,6 @@ text-shadow:0 5px 20px rgba(0,0,0,0.4);
     position: relative;
     z-index: 2;
 }
-
 .hero h1::after {
     content: "";
     display: block;
@@ -100,7 +85,6 @@ text-shadow:0 5px 20px rgba(0,0,0,0.4);
     background: linear-gradient(90deg, #417165, #c97248);
     border-radius: 10px;
 }
-
 @keyframes slideDown {
 from {
 transform: translateY(-100%);
@@ -111,99 +95,83 @@ transform: translateY(0);
 opacity: 1;
 }
 }
-
 .intro{
 max-width:900px;
 margin:auto;
 padding:80px 20px;
 text-align:center;
 }
-
 .intro h2{
 color:var(--verde);
 font-size:2rem;
 margin-bottom:20px;
 }
-
 .intro p{
 font-size:1.2rem;
 line-height:1.7;
 color:#555;
 }
-
 .container{
 max-width:1100px;
 margin:auto;
 padding:60px 20px;
 }
-
-/* CORREÇÃO: agorarap para PC e wrap apenas no mobile */
 .section{
 display:flex;
 align-items:center;
 gap:40px;
 margin-bottom:120px;
-flex-wrap:nowrap; /* MUDADO PARA nowrap - FICA LADO A LADO NO PC */
+flex-wrap:nowrap;
 opacity:0;
 transform:translateY(80px);
 transition:1s;
 }
-
 .section.active{
 opacity:1;
 transform:translateY(0);
 }
-
 .text{
 flex:1;
 min-width:280px;
-max-width:50%; /* GARANTE QUE NÃO ULTRAPASSE METADE DA TELA */
+max-width:50%;
 }
-
 .text h2{
 color:var(--verde);
 font-size:2rem;
 margin-bottom:15px;
 }
-
 .text p{
 line-height:1.6;
 font-size:1.1rem;
 }
-
 .image{
 flex:1;
 min-width:280px;
-max-width:50%; /* GARANTE QUE NÃO ULTRAPASSE METADE DA TELA */
+max-width:50%;
 border-radius:12px;
 overflow:hidden;
 }
-
 .image img{
 width:100%;
 display:block;
 border-radius:12px;
 transition:0.6s;
 }
-
 .section:hover img{
 transform:scale(1.05);
 }
-
 .importancia{
 background:white;
 padding:50px;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
-
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
 margin-top:40px;
 }
-
 .card{
 background:white;
 padding:30px;
@@ -214,7 +182,6 @@ transition:.4s;
 position:relative;
 overflow:hidden;
 }
-
 .card::before{
 content:"";
 position:absolute;
@@ -224,18 +191,15 @@ width:100%;
 height:4px;
 background:var(--laranja);
 }
-
 .card:hover{
 transform:translateY(-10px) scale(1.03);
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
-
 .card i{
 font-size:35px;
 color:var(--laranja);
 margin-bottom:10px;
 }
-
 .parallax{
 height:350px;
 background-image:url("idoso-feliz.jpg");
@@ -250,7 +214,6 @@ font-size:2rem;
 text-align:center;
 position:relative;
 }
-
 .parallax::before{
 content:"";
 position:absolute;
@@ -259,31 +222,24 @@ height:100%;
 background:#ffffff;
 opacity: 0.5;
 }
-
 .parallax span{
 position:relative;
 z-index:2;
 font-weight:bold;
-
 background:linear-gradient(90deg,#417165,#c97248,#e6b17e);
-
 background-clip:text;
 -webkit-background-clip:text;
-
 color:transparent;
 -webkit-text-fill-color:transparent;
 }
-
 .cta{
 padding:80px 20px;
 text-align:center;
 }
-
 .cta h2{
 font-size:2.2rem;
 color:var(--verde);
 }
-
 .cta button{
 margin-top:25px;
 padding:15px 40px;
@@ -296,47 +252,36 @@ font-weight:bold;
 cursor:pointer;
 transition:0.4s;
 }
-
 .cta button:hover{
 transform:scale(1.08);
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
-
-/* MEDIA QUERY CORRIGIDA - SÓ APLICA NO CELULAR */
 @media(max-width:768px){
     .hero h1 {
         font-size: 2.5rem;
         padding: 0 15px;
     }
-
     .hero h1::after {
         width: 80%;
     }
-    
     .hero p{
         font-size:1rem;
     }
-    
-    /* NO CELULAR: EMPILHA TEXTO E IMAGEM */
     .section{
         flex-wrap:wrap;
         flex-direction:column;
         text-align:center;
         gap:30px;
     }
-    
     .text, .image {
-        max-width:100%; /* OCUPA TELA INTEIRA NO CELULAR */
+        max-width:100%;
         flex:auto;
     }
-    
     .parallax{
         font-size:1.4rem;
         padding:20px;
     }
 }
-
-/* BOTÃO MENU */
 .menu-btn{
 position: fixed;
 top: 25px;
@@ -344,7 +289,6 @@ left: 25px;
 z-index: 3000;
 cursor: pointer;
 }
-
 .menu-btn span{
 display:block;
 width:30px;
@@ -354,20 +298,15 @@ margin:6px 0;
 border-radius:5px;
 transition:0.4s;
 }
-
 .menu-btn:hover span:nth-child(1){
 transform:translateX(6px);
 }
-
 .menu-btn:hover span:nth-child(2){
 transform:translateX(-6px);
 }
-
 .menu-btn:hover span:nth-child(3){
 transform:translateX(6px);
 }
-
-/* MENU LATERAL */
 .side-menu{
 position: fixed;
 top: 0;
@@ -378,62 +317,46 @@ padding-top: 100px;
 background: var(--verde);
 transition: 0.5s;
 z-index: 2500;
-
 border-top-right-radius:120px;
 border-bottom-right-radius:120px;
-
 box-shadow:10px 0 40px rgba(0,0,0,0.2);
 }
-
 .side-menu a{
 display:flex;
 align-items:center;
 gap:12px;
-
 padding:18px 30px;
-
 color:white;
 text-decoration:none;
 font-size:18px;
-
 transition:0.3s;
 border-radius:30px 0 0 30px;
 }
-
 .side-menu a i{
 font-size:20px;
 }
-
 .side-menu a:hover{
 background:rgba(255,255,255,0.15);
 transform:translateX(10px);
 }
-
 .side-menu.open{
 left:0;
 }
-
 .menu-close{
 position:absolute;
 top:30px;
 right:60px;
-
 width:40px;
 height:40px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 background:rgba(255,255,255,0.15);
 border-radius:50%;
-
 font-size:20px;
 color:white;
-
 cursor:pointer;
 }
-
 .breadcrumbs {
     padding: 1rem 2rem;
     background: #f8f9fa;
@@ -443,30 +366,24 @@ cursor:pointer;
     font-size: 0.95rem;
     border-bottom: 1px solid #e0e0e0;
 }
-
 .breadcrumbs a {
     color: var(--verde);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .breadcrumbs a:hover {
     color: var(--laranja);
     text-decoration: underline;
 }
-
 .breadcrumbs .separator {
     color: var(--laranja);
     margin: 0 0.5rem;
     font-weight: bold;
 }
-
 .breadcrumbs .current {
     color: var(--laranja);
     font-weight: 500;
 }
-
-/* BOTÕES FLUTUANTES */
 .social-float {
     position: fixed;
     bottom: 30px;
@@ -476,7 +393,6 @@ cursor:pointer;
     gap: 15px;
     z-index: 1000;
 }
-
 .float-btn {
     width: 65px;
     height: 65px;
@@ -491,19 +407,15 @@ cursor:pointer;
     transition: 0.3s;
     animation: float 3s ease-in-out infinite;
 }
-
 .float-btn:hover {
     transform: scale(1.1);
 }
-
 .float-btn.whatsapp {
     background: linear-gradient(135deg,#25d366,#128C7E);
 }
-
 .float-btn.instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
-
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
@@ -512,8 +424,6 @@ cursor:pointer;
         transform: translateY(-10px);
     }
 }
-
-/* FOOTER */
 .footer {
     background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
     color: var(--texto-escuro);
@@ -522,78 +432,58 @@ cursor:pointer;
     margin-top: 4rem;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
 }
-
 .footer p {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
 }
-
 .footer a {
     color: var(--texto-escuro);
     text-decoration: none;
     font-weight: bold;
     border-bottom: 2px solid var(--laranja);
 }
-
 .footer a:hover {
     color: var(--laranja);
 }
-
 </style>
 </head>
-
 <body>
-
-    <!-- Botão Menu -->
-<div class="menu-btn" onclick="openMenu()">
+    <div class="menu-btn" onclick="openMenu()">
 <span></span>
 <span></span>
 <span></span>
 </div>
-
-<!-- Menu Lateral -->
 <div id="sideMenu" class="side-menu" onmouseleave="closeMenu()">
-
 <div class="menu-close" onclick="closeMenu()">
 <i class="fas fa-times"></i>
 </div>
-
 <a href="index.html">
 <i class="fas fa-home"></i> Página inicial
 </a>
-
 <a href="cuidadores.html">
 <i class="fas fa-hands-helping"></i> O que são os Cuidadores
 </a>
-
-<a href="dacruz.html">
+<a href="integrantes.html">
 <i class="fas fa-user"></i> Quem é Dacruz Nery
 </a>
-
 <a href="curso.html">
 <i class="fas fa-graduation-cap"></i> Cursos completos
 </a>
-
 <a href="faq.html">
 <i class="fas fa-question-circle"></i> Perguntas Frequentes
 </a>
-
 </div>
-
-<!-- HERO COM TÍTULO MANTIDO E EFEITO CORTADO -->
 <section class="hero">
     <div class="hero-content">
         <h1>Cuidadores de Idosos</h1>
     </div>
 </section>
-
 <div class="breadcrumbs">
     <a href="index.html">🏠 Home</a>
     <span class="separator">›</span>
     <span class="current">Cuidadores de Idosos</span>
 </div>
-
 <section class="intro">
 <h2>Sobre a profissão</h2>
 <p>
@@ -602,155 +492,101 @@ Com o aumento da expectativa de vida, cresce também a importância de profissio
 para oferecer cuidado, segurança e qualidade de vida às pessoas da terceira idade.
 </p>
 </section>
-
 <div class="container">
-
 <div class="section">
-
 <div class="text">
-
 <h2>O que faz um cuidador de idosos?</h2>
-
 <p>
 O cuidador de idosos é o profissional responsável por auxiliar pessoas idosas em suas atividades diárias, promovendo conforto, segurança e bem-estar.
-
 Esse profissional pode ajudar em tarefas como higiene pessoal, alimentação, mobilidade, administração de medicamentos, acompanhamento em consultas médicas e principalmente oferecer companhia e apoio emocional.
-
 Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e dedicação.
 </p>
-
 </div>
-
 <div class="image">
 <img src="cuidando.png" alt="Cuidador ajudando idoso">
 </div>
-
 </div>
-
 <div class="section">
-
 <div class="image">
 <img src="cuidando2.png" alt="Cuidador fazendo companhia para idoso">
 </div>
-
 <div class="text">
-
 <h2>A importância desse profissional</h2>
-
 <p>
 Com o envelhecimento da população, o papel do cuidador tornou-se essencial para garantir dignidade e qualidade de vida aos idosos.
-
 Muitas famílias não possuem disponibilidade de tempo ou preparo técnico para oferecer todos os cuidados necessários.
-
 É nesse momento que o cuidador atua como um apoio fundamental, trazendo segurança para a família e conforto para o idoso.
 </p>
-
 </div>
-
 </div>
-
 <div class="importancia">
-
 <h2 style="text-align:center;color:var(--verde)">Por que os cuidadores são tão importantes?</h2>
-
 <div class="cards">
-
 <div class="card">
 <i class="fas fa-heart"></i>
 <h4>Humanização</h4>
 <p>Promovem cuidado com respeito e empatia.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-user-shield"></i>
 <h4>Segurança</h4>
 <p>Garantem assistência e prevenção de riscos.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-smile"></i>
 <h4>Bem-estar</h4>
 <p>Proporcionam companhia e apoio emocional.</p>
 </div>
-
 <div class="card">
 <i class="fas fa-home"></i>
 <h4>Tranquilidade</h4>
 <p>Oferecem segurança para toda a família.</p>
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 <div class="parallax">
 <span>Cuidar é um ato de amor e responsabilidade.</span>
 </div>
-
 <div class="cta">
-
 <h2>Quer fazer parte dessa profissão?</h2>
-
 <p>Descubra como se tornar um <strong>Cuidador profissional</strong> e transformar vidas.</p>
-
 <button onclick="window.location.href='curso.html'">
 Conhecer o curso
 </button>
-
 </div>
-
-<!-- BOTÕES FLUTUANTES -->
 <div class="social-float">
     <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
     <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
         <i class="fab fa-instagram"></i>
     </a>
 </div>
-
-<!-- FOOTER -->
 <footer class="footer">
     <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
     <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
     <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
 </footer>
-
 <script>
-
 function reveal(){
-
 var sections=document.querySelectorAll(".section")
-
 sections.forEach(sec=>{
-
 var top=sec.getBoundingClientRect().top
 var trigger=window.innerHeight-100
-
 if(top<trigger){
 sec.classList.add("active")
 }
-
 })
-
 }
-
 window.addEventListener("scroll",reveal)
-
 reveal()
-
 function openMenu(){
 document.getElementById("sideMenu").classList.toggle("open")
 }
-
 function closeMenu(){
 document.getElementById("sideMenu").classList.remove("open")
 }
-
 </script>
-
 </body>
 </html>
