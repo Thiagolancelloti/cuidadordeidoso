@@ -6,6 +6,10 @@
 
 <title>O que são os Cuidadores de Ouro</title>
 
+<!-- Meta tags para SEO -->
+<meta name="description" content="Conheça a profissão de cuidador de idosos: o que faz, importância e como se tornar um profissional qualificado.">
+<meta name="keywords" content="cuidador de idosos, profissão cuidador, cuidado de idosos, cuidador profissional">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
@@ -13,6 +17,7 @@
 :root{
 --verde:#417165;
 --laranja:#c97248;
+--texto-escuro: #4a4a4a;
 }
 
 *{
@@ -27,6 +32,7 @@ color:#444;
 overflow-x:hidden;
 }
 
+/* HERO COM EFEITO CORTADO IGUAL AO INDEX */
 .hero{
 height:90vh;
 display:flex;
@@ -37,6 +43,9 @@ position:relative;
 color:white;
 text-align:center;
 overflow:hidden;
+clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+animation: slideDown 1s ease-out;
+padding: 2rem;
 }
 
 .hero::before{
@@ -47,7 +56,8 @@ left:0;
 width:100%;
 height:100%;
 background-image:url("cuidadoresdeouro.png");
-background-size:50%;
+background-size:65%;
+background-repeat: no-repeat;
 background-position:center;
 filter:blur(5px) brightness(0.5);
 z-index:0;
@@ -71,14 +81,35 @@ z-index:2;
 text-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
 
-.hero h1::after{
-content:"";
-display:block;
-width:820px;
-height:6px;
-margin:15px auto 0;
-background:linear-gradient(90deg,#417165,#c97248);
-border-radius:10px;
+.hero-content {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 820px;
+    max-width: 90%;
+    height: 6px;
+    margin: 15px auto 0;
+    background: linear-gradient(90deg, #417165, #c97248);
+    border-radius: 10px;
+}
+
+@keyframes slideDown {
+from {
+transform: translateY(-100%);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
 }
 
 .intro{
@@ -106,12 +137,13 @@ margin:auto;
 padding:60px 20px;
 }
 
+/* CORREÇÃO: agorarap para PC e wrap apenas no mobile */
 .section{
 display:flex;
 align-items:center;
 gap:40px;
 margin-bottom:120px;
-flex-wrap:wrap;
+flex-wrap:nowrap; /* MUDADO PARA nowrap - FICA LADO A LADO NO PC */
 opacity:0;
 transform:translateY(80px);
 transition:1s;
@@ -125,6 +157,7 @@ transform:translateY(0);
 .text{
 flex:1;
 min-width:280px;
+max-width:50%; /* GARANTE QUE NÃO ULTRAPASSE METADE DA TELA */
 }
 
 .text h2{
@@ -141,6 +174,7 @@ font-size:1.1rem;
 .image{
 flex:1;
 min-width:280px;
+max-width:50%; /* GARANTE QUE NÃO ULTRAPASSE METADE DA TELA */
 border-radius:12px;
 overflow:hidden;
 }
@@ -223,6 +257,7 @@ position:absolute;
 width:100%;
 height:100%;
 background:#ffffff;
+opacity: 0.5;
 }
 
 .parallax span{
@@ -267,26 +302,242 @@ transform:scale(1.08);
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* MEDIA QUERY CORRIGIDA - SÓ APLICA NO CELULAR */
 @media(max-width:768px){
+    .hero h1 {
+        font-size: 2.5rem;
+        padding: 0 15px;
+    }
 
-.hero h1{
-font-size:2.5rem;
+    .hero h1::after {
+        width: 80%;
+    }
+    
+    .hero p{
+        font-size:1rem;
+    }
+    
+    /* NO CELULAR: EMPILHA TEXTO E IMAGEM */
+    .section{
+        flex-wrap:wrap;
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+    
+    .text, .image {
+        max-width:100%; /* OCUPA TELA INTEIRA NO CELULAR */
+        flex:auto;
+    }
+    
+    .parallax{
+        font-size:1.4rem;
+        padding:20px;
+    }
 }
 
-.hero p{
-font-size:1rem;
+/* BOTÃO MENU */
+.menu-btn{
+position: fixed;
+top: 25px;
+left: 25px;
+z-index: 3000;
+cursor: pointer;
 }
 
-.section{
-flex-direction:column;
-text-align:center;
+.menu-btn span{
+display:block;
+width:30px;
+height:4px;
+background:var(--verde);
+margin:6px 0;
+border-radius:5px;
+transition:0.4s;
 }
 
-.parallax{
-font-size:1.4rem;
-padding:20px;
+.menu-btn:hover span:nth-child(1){
+transform:translateX(6px);
 }
 
+.menu-btn:hover span:nth-child(2){
+transform:translateX(-6px);
+}
+
+.menu-btn:hover span:nth-child(3){
+transform:translateX(6px);
+}
+
+/* MENU LATERAL */
+.side-menu{
+position: fixed;
+top: 0;
+left: -280px;
+width: 280px;
+height: 100%;
+padding-top: 100px;
+background: var(--verde);
+transition: 0.5s;
+z-index: 2500;
+
+border-top-right-radius:120px;
+border-bottom-right-radius:120px;
+
+box-shadow:10px 0 40px rgba(0,0,0,0.2);
+}
+
+.side-menu a{
+display:flex;
+align-items:center;
+gap:12px;
+
+padding:18px 30px;
+
+color:white;
+text-decoration:none;
+font-size:18px;
+
+transition:0.3s;
+border-radius:30px 0 0 30px;
+}
+
+.side-menu a i{
+font-size:20px;
+}
+
+.side-menu a:hover{
+background:rgba(255,255,255,0.15);
+transform:translateX(10px);
+}
+
+.side-menu.open{
+left:0;
+}
+
+.menu-close{
+position:absolute;
+top:30px;
+right:60px;
+
+width:40px;
+height:40px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:rgba(255,255,255,0.15);
+border-radius:50%;
+
+font-size:20px;
+color:white;
+
+cursor:pointer;
+}
+
+.breadcrumbs {
+    padding: 1rem 2rem;
+    background: #f8f9fa;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.breadcrumbs a {
+    color: var(--verde);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--laranja);
+    text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+    color: var(--laranja);
+    margin: 0 0.5rem;
+    font-weight: bold;
+}
+
+.breadcrumbs .current {
+    color: var(--laranja);
+    font-weight: 500;
+}
+
+/* BOTÕES FLUTUANTES */
+.social-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.float-btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+.float-btn.whatsapp {
+    background: linear-gradient(135deg,#25d366,#128C7E);
+}
+
+.float-btn.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
+    color: var(--texto-escuro);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.footer p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.footer a {
+    color: var(--texto-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid var(--laranja);
+}
+
+.footer a:hover {
+    color: var(--laranja);
 }
 
 </style>
@@ -294,9 +545,54 @@ padding:20px;
 
 <body>
 
+    <!-- Botão Menu -->
+<div class="menu-btn" onclick="openMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<!-- Menu Lateral -->
+<div id="sideMenu" class="side-menu" onmouseleave="closeMenu()">
+
+<div class="menu-close" onclick="closeMenu()">
+<i class="fas fa-times"></i>
+</div>
+
+<a href="index.html">
+<i class="fas fa-home"></i> Página inicial
+</a>
+
+<a href="cuidadores.html">
+<i class="fas fa-hands-helping"></i> O que são os Cuidadores
+</a>
+
+<a href="dacruz.html">
+<i class="fas fa-user"></i> Quem é Dacruz Nery
+</a>
+
+<a href="curso.html">
+<i class="fas fa-graduation-cap"></i> Cursos completos
+</a>
+
+<a href="faq.html">
+<i class="fas fa-question-circle"></i> Perguntas Frequentes
+</a>
+
+</div>
+
+<!-- HERO COM TÍTULO MANTIDO E EFEITO CORTADO -->
 <section class="hero">
-<h1>Cuidadores de Idosos</h1>
+    <div class="hero-content">
+        <h1>Cuidadores de Idosos</h1>
+    </div>
 </section>
+
+<div class="breadcrumbs">
+    <a href="index.html">🏠 Home</a>
+    <span class="separator">›</span>
+    <span class="current">Cuidadores de Idosos</span>
+</div>
 
 <section class="intro">
 <h2>Sobre a profissão</h2>
@@ -326,7 +622,7 @@ Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e ded
 </div>
 
 <div class="image">
-<img src="cuidando.png">
+<img src="cuidando.png" alt="Cuidador ajudando idoso">
 </div>
 
 </div>
@@ -334,7 +630,7 @@ Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e ded
 <div class="section">
 
 <div class="image">
-<img src="cuidando2.png">
+<img src="cuidando2.png" alt="Cuidador fazendo companhia para idoso">
 </div>
 
 <div class="text">
@@ -397,13 +693,31 @@ Muitas famílias não possuem disponibilidade de tempo ou preparo técnico para 
 
 <h2>Quer fazer parte dessa profissão?</h2>
 
-<p>Descubra como se tornar um cuidador profissional e transformar vidas.</p>
+<p>Descubra como se tornar um <strong>Cuidador profissional</strong> e transformar vidas.</p>
 
 <button onclick="window.location.href='curso.html'">
 Conhecer o curso
 </button>
 
 </div>
+
+<!-- BOTÕES FLUTUANTES -->
+<div class="social-float">
+    <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
+    <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
+</footer>
 
 <script>
 
@@ -427,6 +741,14 @@ sec.classList.add("active")
 window.addEventListener("scroll",reveal)
 
 reveal()
+
+function openMenu(){
+document.getElementById("sideMenu").classList.toggle("open")
+}
+
+function closeMenu(){
+document.getElementById("sideMenu").classList.remove("open")
+}
 
 </script>
 
