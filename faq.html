@@ -30,7 +30,6 @@
             --dourado: #e6b17e;
         }
 
-        /* HERO COM EFEITO CORTADO */
         .hero {
             height: 60vh;
             display: flex;
@@ -121,7 +120,6 @@
             }
         }
 
-        /* BOTÃO MENU */
         .menu-btn {
             position: fixed;
             top: 25px;
@@ -152,7 +150,6 @@
             transform: translateX(6px);
         }
 
-        /* MENU LATERAL - COM EFEITO VIDRO */
         .side-menu {
             position: fixed;
             top: 0;
@@ -254,20 +251,23 @@
             font-weight: 500;
         }
 
-        /* CONTAINER PRINCIPAL */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
 
-        /* SEÇÃO INTRO */
         .faq-intro {
             text-align: center;
             margin: 3rem 0 5rem;
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .faq-intro.reveal {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .faq-intro h2 {
@@ -305,7 +305,6 @@
             color: var(--laranja-pastel);
         }
 
-        /* SEÇÃO FAQ - NOVA ANIMAÇÃO */
         .faq-section {
             margin: 4rem 0;
             perspective: 1000px;
@@ -325,28 +324,18 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             opacity: 0;
-            transform: rotateX(-15deg) translateY(30px);
-            animation: flipIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            transform: rotateX(-15deg) translateY(30px) scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), 
+                        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                        box-shadow 0.3s ease,
+                        border-color 0.3s ease;
             transform-origin: top;
             position: relative;
         }
 
-        .faq-item:nth-child(1) { animation-delay: 0.1s; }
-        .faq-item:nth-child(2) { animation-delay: 0.2s; }
-        .faq-item:nth-child(3) { animation-delay: 0.3s; }
-        .faq-item:nth-child(4) { animation-delay: 0.4s; }
-        .faq-item:nth-child(5) { animation-delay: 0.5s; }
-        .faq-item:nth-child(6) { animation-delay: 0.6s; }
-
-        @keyframes flipIn {
-            0% {
-                opacity: 0;
-                transform: rotateX(-45deg) translateY(50px) scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: rotateX(0) translateY(0) scale(1);
-            }
+        .faq-item.reveal {
+            opacity: 1;
+            transform: rotateX(0) translateY(0) scale(1);
         }
 
         .faq-item:hover {
@@ -498,7 +487,6 @@
             transform: scaleX(1);
         }
 
-        /* SEÇÃO WHATSAPP */
         .whatsapp-faq {
             background: linear-gradient(135deg, var(--verde-claro), var(--laranja-claro));
             border-radius: 50px;
@@ -508,16 +496,14 @@
             position: relative;
             overflow: hidden;
             border: 2px dashed var(--laranja-pastel);
-            transform: translateY(30px);
             opacity: 0;
-            animation: slideUpFade 0.8s ease 0.7s forwards;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        @keyframes slideUpFade {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .whatsapp-faq.reveal {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .whatsapp-faq::before {
@@ -626,7 +612,6 @@
             }
         }
 
-        /* BOTÕES FLUTUANTES */
         .social-float {
             position: fixed;
             bottom: 30px;
@@ -663,7 +648,7 @@
         }
 
         .float-btn.instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             animation-delay: 0.5s;
         }
 
@@ -676,7 +661,6 @@
             }
         }
 
-        /* FOOTER */
         .footer {
             background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
             color: var(--texto-escuro);
@@ -686,7 +670,12 @@
             clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
             opacity: 0;
             transform: translateY(30px);
-            animation: slideUpFade 0.8s ease 0.8s forwards;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .footer.reveal {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .footer p {
@@ -709,14 +698,6 @@
             transform: translateY(-2px);
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* MODAL CONTATO */
         .modal {
             display: none;
             position: fixed;
@@ -913,6 +894,10 @@
                 font-size: 1.2rem;
                 padding: 1.2rem 2rem;
             }
+            
+            .faq-item.ativo .faq-resposta {
+                max-height: 300px;
+            }
         }
     </style>
 </head>
@@ -961,8 +946,7 @@
     </div>
 
     <div class="container">
-        <!-- SEÇÃO INTRO -->
-        <section class="faq-intro">
+        <section class="faq-intro" id="faqIntro">
             <h2>👋 Bem-vindo ao nosso FAQ</h2>
             <p>
                 Aqui você encontra respostas para as perguntas mais comuns sobre o curso 
@@ -972,11 +956,9 @@
             </p>
         </section>
 
-        <!-- SEÇÃO FAQ COM NOVA ANIMAÇÃO -->
         <section class="faq-section">
             <div class="faq-grid">
-                <!-- Pergunta 1 -->
-                <div class="faq-item">
+                <div class="faq-item" id="faq1">
                     <div class="faq-pergunta" onclick="toggleFaq(this)">
                         <h3>Preciso ter experiência prévia para fazer o curso?</h3>
                         <div class="faq-icone">
@@ -992,8 +974,7 @@
                     </div>
                 </div>
 
-                <!-- Pergunta 2 -->
-                <div class="faq-item">
+                <div class="faq-item" id="faq2">
                     <div class="faq-pergunta" onclick="toggleFaq(this)">
                         <h3>O curso oferece certificado?</h3>
                         <div class="faq-icone">
@@ -1009,8 +990,7 @@
                     </div>
                 </div>
 
-                <!-- Pergunta 3 -->
-                <div class="faq-item">
+                <div class="faq-item" id="faq3">
                     <div class="faq-pergunta" onclick="toggleFaq(this)">
                         <h3>Quanto tempo dura o curso?</h3>
                         <div class="faq-icone">
@@ -1026,8 +1006,7 @@
                     </div>
                 </div>
 
-                <!-- Pergunta 4 -->
-                <div class="faq-item">
+                <div class="faq-item" id="faq4">
                     <div class="faq-pergunta" onclick="toggleFaq(this)">
                         <h3>Posso parcelar o pagamento?</h3>
                         <div class="faq-icone">
@@ -1042,8 +1021,7 @@
                     </div>
                 </div>
 
-                <!-- Pergunta 5 -->
-                <div class="faq-item">
+                <div class="faq-item" id="faq5">
                     <div class="faq-pergunta" onclick="toggleFaq(this)">
                         <h3>E se eu não gostar do curso?</h3>
                         <div class="faq-icone">
@@ -1058,8 +1036,7 @@
                     </div>
                 </div>
 
-                <!-- Pergunta 6 -->
-                <div class="faq-item">
+                <div class="faq-item" id="faq6">
                     <div class="faq-pergunta" onclick="toggleFaq(this)">
                         <h3>Como faço minha inscrição?</h3>
                         <div class="faq-icone">
@@ -1076,14 +1053,13 @@
             </div>
         </section>
 
-        <!-- SEÇÃO WHATSAPP -->
-        <section class="whatsapp-faq">
+        <section class="whatsapp-faq" id="whatsappFaq">
             <h3>Ainda tem dúvidas?</h3>
             <p>
                 Fale diretamente com nossa equipe no WhatsApp. <br>
                 Respondemos rapidinho!
             </p>
-            <a href="https://wa.me/556295690014?text=Olá! Vim pelo FAQ, tenho uma dúvida!" class="btn-whatsapp" target="_blank">
+            <a href="https://wa.me/556295690014?text=vim%20pelo%20faq%20e%20tenho%20uma%20d%C3%BAvida" class="btn-whatsapp" target="_blank">
                 <i class="fab fa-whatsapp"></i> FALAR AGORA
             </a>
         </section>
@@ -1098,7 +1074,6 @@
         </a>
     </div>
 
-    <!-- Modal Contato -->
     <div id="modalContato" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeContato()">&times;</span>
@@ -1133,7 +1108,7 @@
         </div>
     </div>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
         <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
         <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
@@ -1158,22 +1133,59 @@
             document.body.style.overflow = "auto";
         }
 
-        // Função para expandir/recolher FAQ
         function toggleFaq(elemento) {
             const faqItem = elemento.closest('.faq-item');
             
-            // Fecha todos os outros FAQs
             document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== faqItem) {
+                if (item !== faqItem && item.classList.contains('ativo')) {
                     item.classList.remove('ativo');
                 }
             });
             
-            // Alterna o atual
             faqItem.classList.toggle('ativo');
         }
 
-        // Fechar modal ao clicar fora
+        function revealOnScroll() {
+            const intro = document.getElementById('faqIntro');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const whatsapp = document.getElementById('whatsappFaq');
+            const footer = document.getElementById('footer');
+            
+            const windowHeight = window.innerHeight;
+            const revealThreshold = 150;
+
+            if (intro) {
+                const introTop = intro.getBoundingClientRect().top;
+                if (introTop < windowHeight - revealThreshold) {
+                    intro.classList.add('reveal');
+                }
+            }
+
+            faqItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < windowHeight - revealThreshold) {
+                    item.classList.add('reveal');
+                }
+            });
+
+            if (whatsapp) {
+                const whatsappTop = whatsapp.getBoundingClientRect().top;
+                if (whatsappTop < windowHeight - revealThreshold) {
+                    whatsapp.classList.add('reveal');
+                }
+            }
+
+            if (footer) {
+                const footerTop = footer.getBoundingClientRect().top;
+                if (footerTop < windowHeight - revealThreshold) {
+                    footer.classList.add('reveal');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
         window.onclick = function(event) {
             const modal = document.getElementById('modalContato');
             if (event.target == modal) {
