@@ -9,13 +9,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 :root{
---verde:#417165;
---laranja:#c97248;
+--verde-pastel: #417165;
+--verde-escuro: #417165;
+--laranja-pastel: #c97248;
+--laranja-escuro: #c97248;
 --texto-escuro: #4a4a4a;
 }
+
 *{
 box-sizing:border-box;
 }
+
 body{
 margin:0;
 font-family:Segoe UI, Arial;
@@ -23,6 +27,8 @@ background:#f8f8f8;
 color:#444;
 overflow-x:hidden;
 }
+
+/* HERO COM EFEITO CORTADO IGUAL AO INDEX */
 .hero{
 height:90vh;
 display:flex;
@@ -37,6 +43,7 @@ clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 animation: slideDown 1s ease-out;
 padding: 2rem;
 }
+
 .hero::before{
 content:"";
 position:absolute;
@@ -51,6 +58,7 @@ background-position:center;
 filter:blur(5px) brightness(0.5);
 z-index:0;
 }
+
 .hero::after{
 content:"";
 position:absolute;
@@ -59,6 +67,7 @@ height:100%;
 background:linear-gradient(135deg,#417165aa,#c97248aa);
 z-index:1;
 }
+
 .hero h1{
 font-size:4.5rem;
 font-weight:800;
@@ -67,6 +76,7 @@ position:relative;
 z-index:2;
 text-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
+
 .hero-content {
     max-width: 1200px;
     width: 90%;
@@ -75,6 +85,7 @@ text-shadow:0 5px 20px rgba(0,0,0,0.4);
     position: relative;
     z-index: 2;
 }
+
 .hero h1::after {
     content: "";
     display: block;
@@ -85,6 +96,7 @@ text-shadow:0 5px 20px rgba(0,0,0,0.4);
     background: linear-gradient(90deg, #417165, #c97248);
     border-radius: 10px;
 }
+
 @keyframes slideDown {
 from {
 transform: translateY(-100%);
@@ -95,27 +107,32 @@ transform: translateY(0);
 opacity: 1;
 }
 }
+
 .intro{
 max-width:900px;
 margin:auto;
 padding:80px 20px;
 text-align:center;
 }
+
 .intro h2{
-color:var(--verde);
+color:var(--verde-escuro);
 font-size:2rem;
 margin-bottom:20px;
 }
+
 .intro p{
 font-size:1.2rem;
 line-height:1.7;
 color:#555;
 }
+
 .container{
 max-width:1100px;
 margin:auto;
 padding:60px 20px;
 }
+
 .section{
 display:flex;
 align-items:center;
@@ -126,24 +143,29 @@ opacity:0;
 transform:translateY(80px);
 transition:1s;
 }
+
 .section.active{
 opacity:1;
 transform:translateY(0);
 }
+
 .text{
 flex:1;
 min-width:280px;
 max-width:50%;
 }
+
 .text h2{
-color:var(--verde);
+color:var(--verde-escuro);
 font-size:2rem;
 margin-bottom:15px;
 }
+
 .text p{
 line-height:1.6;
 font-size:1.1rem;
 }
+
 .image{
 flex:1;
 min-width:280px;
@@ -151,27 +173,32 @@ max-width:50%;
 border-radius:12px;
 overflow:hidden;
 }
+
 .image img{
 width:100%;
 display:block;
 border-radius:12px;
 transition:0.6s;
 }
+
 .section:hover img{
 transform:scale(1.05);
 }
+
 .importancia{
 background:white;
 padding:50px;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
+
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
 margin-top:40px;
 }
+
 .card{
 background:white;
 padding:30px;
@@ -182,6 +209,7 @@ transition:.4s;
 position:relative;
 overflow:hidden;
 }
+
 .card::before{
 content:"";
 position:absolute;
@@ -189,17 +217,20 @@ top:0;
 left:0;
 width:100%;
 height:4px;
-background:var(--laranja);
+background:var(--laranja-pastel);
 }
+
 .card:hover{
 transform:translateY(-10px) scale(1.03);
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
+
 .card i{
 font-size:35px;
-color:var(--laranja);
+color:var(--laranja-pastel);
 margin-bottom:10px;
 }
+
 .parallax{
 height:350px;
 background-image:url("idoso-feliz.jpg");
@@ -214,6 +245,7 @@ font-size:2rem;
 text-align:center;
 position:relative;
 }
+
 .parallax::before{
 content:"";
 position:absolute;
@@ -222,6 +254,7 @@ height:100%;
 background:#ffffff;
 opacity: 0.5;
 }
+
 .parallax span{
 position:relative;
 z-index:2;
@@ -232,14 +265,17 @@ background-clip:text;
 color:transparent;
 -webkit-text-fill-color:transparent;
 }
+
 .cta{
 padding:80px 20px;
 text-align:center;
 }
+
 .cta h2{
 font-size:2.2rem;
-color:var(--verde);
+color:var(--verde-escuro);
 }
+
 .cta button{
 margin-top:25px;
 padding:15px 40px;
@@ -252,10 +288,12 @@ font-weight:bold;
 cursor:pointer;
 transition:0.4s;
 }
+
 .cta button:hover{
 transform:scale(1.08);
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
+
 @media(max-width:768px){
     .hero h1 {
         font-size: 2.5rem;
@@ -282,6 +320,8 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
         padding:20px;
     }
 }
+
+/* MENU LATERAL - PADRÃO IGUAL AO INDEX */
 .menu-btn{
 position: fixed;
 top: 25px;
@@ -289,38 +329,51 @@ left: 25px;
 z-index: 3000;
 cursor: pointer;
 }
+
 .menu-btn span{
 display:block;
 width:30px;
 height:4px;
-background:var(--verde);
+background:var(--verde-pastel);
 margin:6px 0;
 border-radius:5px;
 transition:0.4s;
 }
+
 .menu-btn:hover span:nth-child(1){
 transform:translateX(6px);
 }
+
 .menu-btn:hover span:nth-child(2){
 transform:translateX(-6px);
 }
+
 .menu-btn:hover span:nth-child(3){
 transform:translateX(6px);
 }
-.side-menu{
-position: fixed;
-top: 0;
-left: -280px;
-width: 280px;
-height: 100%;
-padding-top: 100px;
-background: var(--verde);
-transition: 0.5s;
-z-index: 2500;
-border-top-right-radius:120px;
-border-bottom-right-radius:120px;
-box-shadow:10px 0 40px rgba(0,0,0,0.2);
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    padding-top: 100px;
+    background: rgba(65, 113, 101, 0.95); /* Verde com 95% de opacidade */
+    backdrop-filter: blur(5px); /* blur mais suave */
+    transition: 0.5s;
+    z-index: 2500;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+    box-shadow: 10px 0 40px rgba(0,0,0,0.2);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    
+    /* FORÇA O CORTE DO BLUR */
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
 }
+
 .side-menu a{
 display:flex;
 align-items:center;
@@ -332,16 +385,21 @@ font-size:18px;
 transition:0.3s;
 border-radius:30px 0 0 30px;
 }
+
 .side-menu a i{
 font-size:20px;
 }
+
 .side-menu a:hover{
 background:rgba(255,255,255,0.15);
 transform:translateX(10px);
+box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
+
 .side-menu.open{
 left:0;
 }
+
 .menu-close{
 position:absolute;
 top:30px;
@@ -356,7 +414,14 @@ border-radius:50%;
 font-size:20px;
 color:white;
 cursor:pointer;
+transition:0.3s;
 }
+
+.menu-close:hover{
+transform: rotate(90deg) scale(1.2);
+background: rgba(255,255,255,0.3);
+}
+
 .breadcrumbs {
     padding: 1rem 2rem;
     background: #f8f9fa;
@@ -366,24 +431,30 @@ cursor:pointer;
     font-size: 0.95rem;
     border-bottom: 1px solid #e0e0e0;
 }
+
 .breadcrumbs a {
-    color: var(--verde);
+    color: var(--verde-pastel);
     text-decoration: none;
     transition: color 0.3s ease;
 }
+
 .breadcrumbs a:hover {
-    color: var(--laranja);
+    color: var(--laranja-pastel);
     text-decoration: underline;
 }
+
 .breadcrumbs .separator {
-    color: var(--laranja);
+    color: var(--laranja-pastel);
     margin: 0 0.5rem;
     font-weight: bold;
 }
+
 .breadcrumbs .current {
-    color: var(--laranja);
+    color: var(--laranja-pastel);
     font-weight: 500;
 }
+
+/* BOTÕES FLUTUANTES */
 .social-float {
     position: fixed;
     bottom: 30px;
@@ -393,6 +464,7 @@ cursor:pointer;
     gap: 15px;
     z-index: 1000;
 }
+
 .float-btn {
     width: 65px;
     height: 65px;
@@ -407,23 +479,25 @@ cursor:pointer;
     transition: 0.3s;
     animation: float 3s ease-in-out infinite;
 }
+
 .float-btn:hover {
     transform: scale(1.1);
 }
+
 .float-btn.whatsapp {
     background: linear-gradient(135deg,#25d366,#128C7E);
 }
+
 .float-btn.instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
+
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
+
+/* FOOTER */
 .footer {
     background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
     color: var(--texto-escuro);
@@ -432,19 +506,22 @@ cursor:pointer;
     margin-top: 4rem;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
 }
+
 .footer p {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
 }
+
 .footer a {
     color: var(--texto-escuro);
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 2px solid var(--laranja);
+    border-bottom: 2px solid var(--laranja-pastel);
 }
+
 .footer a:hover {
-    color: var(--laranja);
+    color: var(--laranja-pastel);
 }
 </style>
 </head>
@@ -454,6 +531,7 @@ cursor:pointer;
 <span></span>
 <span></span>
 </div>
+
 <div id="sideMenu" class="side-menu" onmouseleave="closeMenu()">
 <div class="menu-close" onclick="closeMenu()">
 <i class="fas fa-times"></i>
@@ -465,39 +543,46 @@ cursor:pointer;
 <i class="fas fa-hands-helping"></i> O que são os Cuidadores
 </a>
 <a href="integrantes.html">
-<i class="fas fa-user"></i> Quem é Dacruz Nery
+<i class="fas fa-user"></i> Conheça nossos cuidadores
 </a>
 <a href="curso.html">
-<i class="fas fa-graduation-cap"></i> Cursos completos
+<i class="fas fa-graduation-cap"></i> Curso completo
+</a>
+<a href="#" onclick="openContato()">
+<i class="fas fa-envelope"></i> Contatos
 </a>
 <a href="faq.html">
 <i class="fas fa-question-circle"></i> Perguntas Frequentes
 </a>
 </div>
+
 <section class="hero">
     <div class="hero-content">
         <h1>Cuidadores de Idosos</h1>
     </div>
 </section>
+
 <div class="breadcrumbs">
     <a href="index.html">🏠 Home</a>
     <span class="separator">›</span>
     <span class="current">Cuidadores de Idosos</span>
 </div>
+
 <section class="intro">
 <h2>Sobre a profissão</h2>
 <p>
-O cuidado com idosos é uma das profissões mais humanas e necessárias da sociedade moderna.
+O <Strong>Cuidado com Idosos é uma das profissões mais humanas e necessárias da sociedade moderna.</Strong>
 Com o aumento da expectativa de vida, cresce também a importância de profissionais preparados
 para oferecer cuidado, segurança e qualidade de vida às pessoas da terceira idade.
 </p>
 </section>
+
 <div class="container">
 <div class="section">
 <div class="text">
-<h2>O que faz um cuidador de idosos?</h2>
+<h2>O que faz um Cuidador de Idosos?</h2>
 <p>
-O cuidador de idosos é o profissional responsável por auxiliar pessoas idosas em suas atividades diárias, promovendo conforto, segurança e bem-estar.
+O <strong>Cuidador de idosos</strong> é o profissional responsável por auxiliar pessoas idosas em suas atividades diárias, promovendo conforto, segurança e bem-estar.
 Esse profissional pode ajudar em tarefas como higiene pessoal, alimentação, mobilidade, administração de medicamentos, acompanhamento em consultas médicas e principalmente oferecer companhia e apoio emocional.
 Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e dedicação.
 </p>
@@ -506,6 +591,7 @@ Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e ded
 <img src="cuidando.png" alt="Cuidador ajudando idoso">
 </div>
 </div>
+
 <div class="section">
 <div class="image">
 <img src="cuidando2.png" alt="Cuidador fazendo companhia para idoso">
@@ -513,14 +599,15 @@ Muito além de um trabalho técnico, o cuidado envolve empatia, paciência e ded
 <div class="text">
 <h2>A importância desse profissional</h2>
 <p>
-Com o envelhecimento da população, o papel do cuidador tornou-se essencial para garantir dignidade e qualidade de vida aos idosos.
+Com o envelhecimento da população, o papel do <Strong>Cuidador</strong> tornou-se essencial para garantir dignidade e qualidade de vida aos idosos.
 Muitas famílias não possuem disponibilidade de tempo ou preparo técnico para oferecer todos os cuidados necessários.
-É nesse momento que o cuidador atua como um apoio fundamental, trazendo segurança para a família e conforto para o idoso.
+É nesse momento que o <strong>Cuidador atua como um apoio fundamental</strong>, trazendo segurança para a família e conforto para o idoso.
 </p>
 </div>
 </div>
+
 <div class="importancia">
-<h2 style="text-align:center;color:var(--verde)">Por que os cuidadores são tão importantes?</h2>
+<h2 style="text-align:center;color:var(--verde-escuro)">Por que os <STRONG>Cuidadores são tão importantes?</strong></h2>
 <div class="cards">
 <div class="card">
 <i class="fas fa-heart"></i>
@@ -545,9 +632,11 @@ Muitas famílias não possuem disponibilidade de tempo ou preparo técnico para 
 </div>
 </div>
 </div>
+
 <div class="parallax">
 <span>Cuidar é um ato de amor e responsabilidade.</span>
 </div>
+
 <div class="cta">
 <h2>Quer fazer parte dessa profissão?</h2>
 <p>Descubra como se tornar um <strong>Cuidador profissional</strong> e transformar vidas.</p>
@@ -555,6 +644,7 @@ Muitas famílias não possuem disponibilidade de tempo ou preparo técnico para 
 Conhecer o curso
 </button>
 </div>
+
 <div class="social-float">
     <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
@@ -563,12 +653,84 @@ Conhecer o curso
         <i class="fab fa-instagram"></i>
     </a>
 </div>
+
+<!-- Modal Contato -->
+<div id="modalContato" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+    <div class="modal-content" style="background: white; padding: 2rem; border-radius: 20px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; position: relative;">
+        <span class="close-modal" onclick="closeContato()" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; cursor: pointer; color: #999;">&times;</span>
+        <h2 style="color: var(--texto-escuro); margin-bottom: 1.5rem; font-size: 2rem; text-align: center;">Entre em contato</h2>
+        <div class="contact-icons" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="https://www.instagram.com/dacruzneryfranca" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#fd5949,#d6249f,#285AEB);">
+                <i class="fab fa-instagram"></i>
+                <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Instagram</span>
+            </a>
+            <a href="mailto:contato.cuidadoresdeouro@gmail.com" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#ff7b00,#ffb347);">
+                <i class="fas fa-envelope"></i>
+                <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Email</span>
+            </a>
+            <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#25d366,#128C7E);">
+                <i class="fab fa-whatsapp"></i>
+                <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">WhatsApp</span>
+            </a>
+        </div>
+        <form action="https://formsubmit.co/contato.cuidadoresdeouro@gmail.com" method="POST">
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Nome completo</label>
+                <input type="text" name="Nome" placeholder="Digite seu nome" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Email</label>
+                <input type="email" name="Email" placeholder="Digite seu email" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Telefone</label>
+                <input type="tel" name="Telefone" placeholder="(00) 00000-0000" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem;">
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; color: var(--texto-escuro); font-weight: 600;">Mensagem</label>
+                <textarea name="Mensagem" placeholder="Digite sua mensagem" required style="width: 100%; padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; height: 100px; resize: vertical;"></textarea>
+            </div>
+            <input type="hidden" name="_next" value="https://cuidadordeidoso.vercel.app/obrigado.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Novo contato do site Cuidadores de Ouro">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_autoresponse" value="Recebemos sua mensagem! Em breve entraremos em contato.">
+            <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, var(--verde-pastel) 0%, var(--laranja-pastel) 100%); color: #ffffff; border: none; padding: 1rem 2rem; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s ease;">
+                <i class="fas fa-paper-plane"></i> Enviar mensagem
+            </button>
+        </form>
+    </div>
+</div>
+
 <footer class="footer">
     <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
     <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
     <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
 </footer>
+
 <script>
+function openMenu(){
+document.getElementById("sideMenu").classList.toggle("open")
+}
+function closeMenu(){
+document.getElementById("sideMenu").classList.remove("open")
+}
+function openContato() {
+    document.getElementById("modalContato").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+function closeContato() {
+    document.getElementById("modalContato").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+window.onclick = function(event) {
+    const modal = document.getElementById('modalContato');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
 function reveal(){
 var sections=document.querySelectorAll(".section")
 sections.forEach(sec=>{
@@ -581,12 +743,6 @@ sec.classList.add("active")
 }
 window.addEventListener("scroll",reveal)
 reveal()
-function openMenu(){
-document.getElementById("sideMenu").classList.toggle("open")
-}
-function closeMenu(){
-document.getElementById("sideMenu").classList.remove("open")
-}
 </script>
 </body>
 </html>
