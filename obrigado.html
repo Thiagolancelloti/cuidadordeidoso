@@ -1,141 +1,428 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado pelo contato | Cuidador de Ouro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<title>Obrigado pelo contato</title>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6f3e6 100%);
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        /* Elementos decorativos de fundo */
+        body::before {
+            content: "❤️";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 100px;
+            opacity: 0.03;
+            transform: rotate(-15deg);
+            animation: floatDecoration 8s ease-in-out infinite;
+        }
 
-<style>
+        body::after {
+            content: "🤝";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.03;
+            transform: rotate(10deg);
+            animation: floatDecoration 10s ease-in-out infinite reverse;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-}
+        @keyframes floatDecoration {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(-20px); }
+        }
 
-body{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#ffffff,#e6f3e6);
-}
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 3.5rem 2.5rem;
+            border-radius: 40px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 30px 70px rgba(65, 113, 101, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
+            animation: containerAppear 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
 
-.container{
+        @keyframes containerAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
-text-align:center;
-background:white;
+        /* Círculo decorativo atrás do ícone */
+        .icon-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #41716520, #c9724820);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: wrapperPulse 3s ease-in-out infinite;
+        }
 
-padding:50px;
-border-radius:25px;
+        @keyframes wrapperPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(65, 113, 101, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(65, 113, 101, 0.1);
+            }
+        }
 
-max-width:500px;
-width:90%;
+        .icon-wrapper i {
+            font-size: 70px;
+            background: linear-gradient(135deg, #417165, #c97248);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: iconFloat 2s ease-in-out infinite;
+        }
 
-box-shadow:0 20px 60px rgba(0,0,0,0.1);
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
 
-animation:fadeIn 1s ease;
+        h1 {
+            color: #417165;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
 
-}
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #417165, #c97248);
+            margin: 15px auto 0;
+            border-radius: 2px;
+            animation: lineExpand 1s ease-out;
+        }
 
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+        @keyframes lineExpand {
+            from { width: 0; opacity: 0; }
+            to { width: 80px; opacity: 1; }
+        }
 
-.icon{
+        .mensagem-principal {
+            color: #2d3e3a;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(65, 113, 101, 0.05), rgba(201, 114, 72, 0.05));
+            padding: 1.5rem;
+            border-radius: 20px;
+            border-left: 5px solid #c97248;
+            text-align: left;
+        }
 
-font-size:70px;
-color:#417165;
+        .mensagem-principal i {
+            color: #c97248;
+            margin-right: 8px;
+        }
 
-margin-bottom:20px;
+        .mensagem-principal strong {
+            color: #417165;
+            font-weight: 700;
+        }
 
-animation:pulse 2s infinite;
+        .info-box {
+            background: white;
+            border-radius: 15px;
+            padding: 1.2rem;
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            animation: slideIn 0.6s ease-out 0.3s both;
+        }
 
-}
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.1);}
-100%{transform:scale(1);}
-}
+        .info-box-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #41716515, #c9724815);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-h1{
-color:#417165;
-margin-bottom:15px;
-}
+        .info-box-icon i {
+            font-size: 24px;
+            color: #c97248;
+        }
 
-p{
-color:#555;
-font-size:17px;
-line-height:1.6;
-margin-bottom:30px;
-}
+        .info-box-text {
+            flex: 1;
+        }
 
-.btn{
+        .info-box-text p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
 
-display:inline-block;
+        .info-box-text small {
+            color: #888;
+            font-size: 0.85rem;
+        }
 
-padding:14px 28px;
+        .tempo-resposta {
+            display: inline-block;
+            background: linear-gradient(135deg, #41716510, #c9724810);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            color: #417165;
+            font-size: 0.9rem;
+            margin: 10px 0 20px;
+            border: 1px dashed #c97248;
+            animation: pulseText 2s ease-in-out infinite;
+        }
 
-background:linear-gradient(135deg,#417165,#c97248);
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
 
-color:white;
+        .btn {
+            display: inline-block;
+            padding: 16px 35px;
+            background: linear-gradient(135deg, #417165, #c97248);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-border-radius:30px;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
 
-text-decoration:none;
+        .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(65, 113, 101, 0.3);
+        }
 
-font-weight:bold;
+        .btn:hover::before {
+            left: 100%;
+        }
 
-transition:0.3s;
+        .btn i {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
 
-}
+        .btn:hover i {
+            transform: translateX(-5px);
+        }
 
-.btn:hover{
+        .redes-sociais {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(201, 114, 72, 0.3);
+        }
 
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        .redes-sociais p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
 
-}
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
 
-</style>
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: socialAppear 0.5s ease forwards;
+        }
+
+        .social-link:nth-child(1) { animation-delay: 0.4s; }
+        .social-link:nth-child(2) { animation-delay: 0.5s; }
+
+        @keyframes socialAppear {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .social-link.whatsapp {
+            background: linear-gradient(135deg, #25d366, #128C7E);
+        }
+
+        .social-link.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .social-link:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .mensagem-principal {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .info-box {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .info-box-icon {
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <div class="icon-wrapper">
+            <i class="fas fa-check-circle"></i>
+        </div>
 
-<div class="container">
+        <h1>✨ Tudo certo! ✨</h1>
 
-<div class="icon">
-<i class="fas fa-check-circle"></i>
-</div>
+        <div class="mensagem-principal">
+            <i class="fas fa-envelope-open-text"></i> 
+            Obrigado por entrar em contato com a <strong>Cuidadores de Ouro</strong>!
+        </div>
 
-<h1>Mensagem enviada!</h1>
+        <p style="color: #555; font-size: 1.1rem; margin-bottom: 20px;">
+            Recebemos sua mensagem e estamos muito felizes em falar com você.
+        </p>
+        <div class="info-box">
+            <div class="info-box-icon">
+                <i class="fas fa-user-check"></i>
+            </div>
+            <div class="info-box-text">
+                <p><strong>O que acontece agora?</strong></p>
+                <p>Nossa equipe já recebeu sua mensagem e em breve uma de nossas especialistas entrará em contato pelo WhatsApp ou e-mail.</p>
+                <small>Fique de olho nas suas mensagens! 📱</small>
+            </div>
+        </div>
 
-<p>
-Obrigado por entrar em contato com a <strong>Cuidadores de Ouro</strong>.
-Recebemos sua mensagem e em breve nossa equipe irá responder.
-</p>
+        <div class="info-box">
+            <div class="info-box-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="info-box-text">
+                <p><strong>Enquanto isso...</strong></p>
+                <p>Que tal conhecer um pouco mais sobre o curso e os conteúdos que preparamos para você?</p>
+            </div>
+        </div>
 
-<p>
-Nosso objetivo é conectar famílias a cuidadores dedicados e profissionais.
-</p>
+        <a href="curso.html" class="btn">
+            <i class="fas fa-graduation-cap"></i> CONHECER O CURSO
+        </a>
 
-<a href="index.html" class="btn">
-<i class="fas fa-arrow-left"></i> Voltar ao site
-</a>
+        <div style="margin: 20px 0 10px;">
+            <a href="index.html" style="color: #417165; text-decoration: none; font-size: 0.95rem; transition: 0.3s; border-bottom: 2px solid transparent; padding-bottom: 2px;">
+                <i class="fas fa-arrow-left"></i> Voltar para a página inicial
+            </a>
+        </div>
 
-</div>
-
+        <div class="redes-sociais">
+            <p>Acompanhe nas redes sociais</p>
+            <div class="social-icons">
+                <a href="https://wa.me/556299376373" class="social-link whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/dacruzneryfranca" class="social-link instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
