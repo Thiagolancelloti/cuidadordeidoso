@@ -552,104 +552,122 @@
         }
 
         .precos-section {
-            background: white;
-            border-radius: 50px;
-            padding: 4rem;
-            margin: 5rem 0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border: 2px solid var(--laranja-pastel);
-            position: relative;
-            overflow: hidden;
-        }
+    background: white;
+    border-radius: 50px;
+    padding: 4rem;
+    margin: 5rem 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid var(--verde-pastel);
+    position: relative;
+    overflow: hidden;
+}
 
-        .precos-section::before {
-            content: '🔥';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            font-size: 8rem;
-            opacity: 0.1;
-            transform: rotate(-15deg);
-        }
+.precos-section::before {
+    content: '🔥';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 8rem;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+}
 
-        .precos-section::after {
-            content: '⭐';
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            font-size: 8rem;
-            opacity: 0.1;
-            transform: rotate(15deg);
-        }
+.precos-section::after {
+    content: '⭐';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.1;
+    transform: rotate(15deg);
+}
 
-        .precos-titulo {
-            font-size: 2.2rem;
-            color: var(--verde-pastel);
-            margin-bottom: 2rem;
-            position: relative;
-        }
+.precos-titulo {
+    font-size: 2.2rem;
+    color: var(--verde-pastel);
+    margin-bottom: 2rem;
+    position: relative;
+}
 
-        .precos-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-        }
+.precos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
 
-        .preco-parcelado {
-            background: var(--verde-pastel);
-            color: white;
-            padding: 3rem 4rem;
-            border-radius: 40px;
-            min-width: 320px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            border: 3px solid var(--laranja-pastel);
-        }
+.preco-parcelado {
+    background: #ffffff;
+    color: white;
+    padding: 2rem;
+    border-radius: 40px;
+    min-width: 320px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--laranja-pastel);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .preco-parcelado .valor-destaque {
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 0.8rem;
-            color: white;
-        }
+.preco-parcelado img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
 
-        .preco-parcelado .preco-vista-pequeno {
-            font-size: 1.4rem;
-            color: var(--laranja-pastel);
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            display: inline-block;
-        }
+.preco-parcelado img:hover {
+    transform: scale(1.05);
+}
 
-        .btn-comprar {
-            display: inline-block;
-            margin-top: 3rem;
-            padding: 1.5rem 4rem;
-            background: linear-gradient(135deg, var(--laranja-pastel), var(--laranja-escuro));
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: 60px;
-            box-shadow: 0 15px 30px rgba(201, 114, 72, 0.4);
-            transition: all 0.4s ease;
-            border: 3px solid white;
-            position: relative;
-            z-index: 2;
-            letter-spacing: 1px;
-        }
+.btn-comprar {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1.5rem 4rem;
+    background: linear-gradient(135deg, var(--laranja-pastel), var(--laranja-escuro));
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 60px;
+    box-shadow: 0 15px 30px rgba(201, 114, 72, 0.4);
+    transition: all 0.4s ease;
+    border: 3px solid white;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 1px;
+}
 
-        .btn-comprar:hover {
-            transform: scale(1.1);
-            box-shadow: 0 25px 50px rgba(201, 114, 72, 0.6);
-        }
+.btn-comprar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 25px 50px rgba(201, 114, 72, 0.6);
+}
+
+@media (max-width: 768px) {
+    .precos-section {
+        padding: 2rem 1rem;
+    }
+    
+    .preco-parcelado {
+        padding: 1.5rem;
+        min-width: 280px;
+    }
+    
+    .preco-parcelado img {
+        max-width: 280px;
+    }
+    
+    .btn-comprar {
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+    }
+}
 
         .garantia-section {
             display: flex;
@@ -1010,7 +1028,7 @@
                 <div class="depoimento-card" onclick="expandirImagem('depoimento 1.png')">
                     <img src="depoimento 1.png" alt="Depoimento 1" class="depoimento-imagem">
                     <div class="depoimento-overlay">
-                        <h4>Maria Silva</h4>
+                        <h4>Melri Luciana</h4>
                         <p>"Mudou minha vida completamente!"</p>
                     </div>
                 </div>
@@ -1018,24 +1036,24 @@
                 <div class="depoimento-card" onclick="expandirImagem('depoimento 2.png')">
                     <img src="depoimento 2.png" alt="Depoimento 2" class="depoimento-imagem">
                     <div class="depoimento-overlay">
-                        <h4>Ana Oliveira</h4>
-                        <p>"Hoje tenho independência financeira"</p>
+                        <h4>Carlos Leal</h4>
+                        <p>"Transformando pessoas"</p>
                     </div>
                 </div>
 
                 <div class="depoimento-card" onclick="expandirImagem('depoimento 3.png')">
                     <img src="depoimento 3.png" alt="Depoimento 3" class="depoimento-imagem">
                     <div class="depoimento-overlay">
-                        <h4>Cláudia Santos</h4>
-                        <p>"Melhor decisão que tomei"</p>
+                        <h4>Mário Lima</h4>
+                        <p>"Liberdade financeira não é gasto"</p>
                     </div>
                 </div>
 
                 <div class="depoimento-card" onclick="expandirImagem('depoimento 4.png')">
                     <img src="depoimento 4.png" alt="Depoimento 4" class="depoimento-imagem">
                     <div class="depoimento-overlay">
-                        <h4>Patrícia Lima</h4>
-                        <p>"Recomendo de olhos fechados!"</p>
+                        <h4>Cleidimar Sousa</h4>
+                        <p>"Reconhecimento e um ótimo salário"</p>
                     </div>
                 </div>
             </div>
@@ -1055,20 +1073,21 @@
             </div>
         </section>
 
-        <section class="precos-section">
-            <h2 class="precos-titulo">Invista no seu futuro</h2>
-            
-            <div class="precos-container">
-                <div class="preco-parcelado">
-                    <div class="valor-destaque">12x de R$ 51,40</div>
-                    <div class="preco-vista-pequeno">Ou R$ 497,00 à vista</div>
-                </div>
-            </div>
-            
-            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" class="btn-comprar" target="_blank">
-                GARANTIR MINHA VAGA AGORA
-            </a>
-        </section>
+       <!-- SEÇÃO PREÇOS - CORRIGIDA COM IMAGEM -->
+<section class="precos-section">
+    <h2 class="precos-titulo">Invista no seu futuro</h2>
+    
+    <div class="precos-container">
+        <div class="preco-parcelado">
+            <!-- IMAGEM DOS PREÇOS -->
+            <img src="preco.jpg" alt="12x de R$ 51,40 ou R$ 497 à vista" style="width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto;">
+        </div>
+    </div>
+    
+    <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" class="btn-comprar" target="_blank">
+        GARANTIR MINHA VAGA AGORA
+    </a>
+</section>
 
         <section class="explicacao-section">
             <div class="explicacao-conteudo">
@@ -1127,7 +1146,7 @@
     </div>
 
     <div class="social-float">
-        <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o curso Cuidador de Ouro." class="float-btn whatsapp" target="_blank">
+        <a href="https://wa.me/556299376373?text=Olá! Gostaria de mais informações sobre o curso Cuidador de Ouro." class="float-btn whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
         <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
@@ -1148,7 +1167,7 @@
                     <i class="fas fa-envelope"></i>
                     <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">Email</span>
                 </a>
-                <a href="https://wa.me/556295690014?text=Olá! Gostaria de mais informações sobre o curso." target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#25d366,#128C7E);">
+                <a href="https://wa.me/556299376373?text=Olá! Gostaria de mais informações sobre o curso." target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 18px; text-decoration: none; color: white; font-size: 28px; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: linear-gradient(45deg,#25d366,#128C7E);">
                     <i class="fab fa-whatsapp"></i>
                     <span style="font-size: 12px; margin-top: 6px; font-weight: bold;">WhatsApp</span>
                 </a>
