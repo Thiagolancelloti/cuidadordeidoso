@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Integrantes - Cuidador de Ouro</title>
+    <meta name="description" content="Conheça a equipe por trás do Cuidador de Ouro: Dacruz Nery, fundadora com mais de 15 anos de experiência, e Carmem Nery, gerente de atendimento. Pessoas dedicadas a transformar vidas através do cuidado.">
+    <meta name="keywords" content="equipe cuidador de ouro, dacruz nery, carmem nery, fundadora cuidador de idosos, criadora do curso cuidador, produtos para cuidadores, diário do idoso, comorbidades em idosos">
+    <meta name="author" content="Cuidadores de Ouro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.cuidadoresdeouro.com.br/integrantes.html">
+    <meta property="og:title" content="Nossos Integrantes - Cuidador de Ouro">
+    <meta property="og:description" content="Conheça a equipe por trás do Cuidador de Ouro: Dacruz Nery e Carmem Nery. Pessoas dedicadas a transformar vidas através do cuidado.">
+    <meta property="og:image" content="https://www.cuidadoresdeouro.com.br/cuidadoresdeouro.png">
+    <meta property="og:url" content="https://www.cuidadoresdeouro.com.br/integrantes.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cuidadores de Ouro">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nossos Integrantes - Cuidador de Ouro">
+    <meta name="twitter:description" content="Conheça a equipe por trás do Cuidador de Ouro.">
+    <meta name="twitter:image" content="https://www.cuidadoresdeouro.com.br/cuidadoresdeouro.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="google-site-verification" content="bfpNXMvS9j_OhSvRnk5xpbhVGu9Z5yK4KaEiUfDsrMM" />
     <style>
@@ -30,7 +46,6 @@
             --laranja-claro: rgba(201, 114, 72, 0.1);
         }
 
-        /* HERO COM EFEITO CORTADO */
         .hero {
             height: 80vh;
             display: flex;
@@ -121,7 +136,6 @@
             }
         }
 
-        /* BOTÃO MENU */
         .menu-btn {
             position: fixed;
             top: 25px;
@@ -152,7 +166,6 @@
             transform: translateX(6px);
         }
 
-        /* MENU LATERAL - COM EFEITO VIDRO CORRIGIDO */
         .side-menu {
             position: fixed;
             top: 0;
@@ -254,7 +267,6 @@
             font-weight: 500;
         }
 
-        /* SEÇÃO DE BOAS-VINDAS */
         .welcome-section {
             max-width: 900px;
             margin: 5rem auto;
@@ -306,14 +318,12 @@
             font-weight: 700;
         }
 
-        /* CONTAINER DOS INTEGRANTES */
         .integrantes-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* CARDS DOS INTEGRANTES */
         .integrante-card {
             display: flex;
             align-items: center;
@@ -335,7 +345,6 @@
             transform: translateX(0);
         }
 
-        /* EFEITO DE LINHA CONECTANDO OS CARDS */
         .integrante-card:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -347,7 +356,6 @@
             background: linear-gradient(180deg, var(--laranja-pastel), transparent);
         }
 
-        /* IMAGEM DO INTEGRANTE */
         .integrante-imagem {
             flex: 1;
             min-width: 300px;
@@ -385,13 +393,13 @@
             height: auto;
             display: block;
             transition: transform 0.8s ease;
+            cursor: pointer;
         }
 
         .integrante-card:hover .integrante-imagem img {
             transform: scale(1.1);
         }
 
-        /* INFO DO INTEGRANTE */
         .integrante-info {
             flex: 1;
             padding: 2rem;
@@ -469,7 +477,6 @@
             font-weight: 700;
         }
 
-        /* NOVA SEÇÃO DE PRODUTOS DACRUZ */
         .dacruz-produtos {
             max-width: 1200px;
             margin: 4rem auto;
@@ -526,30 +533,30 @@
             box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
         }
 
-        /* OPÇÃO 2: PREENCHE MAS MOSTRA A IMAGEM INTEIRA (PODE SOBRAR ESPAÇO) */
-.produto-imagem {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(135deg, var(--verde-claro), var(--laranja-claro));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .produto-imagem {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, var(--verde-claro), var(--laranja-claro));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.produto-imagem img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: scale-down;
-    transition: transform 0.5s ease;
-}
+        .produto-imagem img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: scale-down;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
 
-.produto-item:hover .produto-imagem img {
-    transform: scale(1.05);
-}
+        .produto-item:hover .produto-imagem img {
+            transform: scale(1.05);
+        }
 
         .produto-info {
             padding: 2rem;
@@ -586,6 +593,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .foto-dupla img:hover {
@@ -593,7 +601,6 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* BOTÕES FLUTUANTES */
         .social-float {
             position: fixed;
             bottom: 30px;
@@ -640,7 +647,6 @@
             }
         }
 
-        /* FOOTER CORRIGIDO - IGUAL AO DAS OUTRAS PÁGINAS */
         .footer {
             background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
             color: var(--texto-escuro);
@@ -667,7 +673,6 @@
             color: var(--laranja-pastel);
         }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 968px) {
             .integrante-card {
                 flex-direction: column !important;
@@ -734,6 +739,87 @@
                 font-size: 2rem;
             }
         }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 85%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            animation: zoom 0.3s ease;
+        }
+
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10000;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .lightbox-close:hover {
+            color: var(--laranja-pastel);
+            transform: rotate(90deg);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            pointer-events: none;
+        }
+
+        .integrante-imagem img:hover,
+        .produto-imagem img:hover,
+        .foto-dupla img:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -790,10 +876,9 @@
     </section>
 
     <div class="integrantes-container">
-        <!-- DACRUZ NERY -->
         <div class="integrante-card">
             <div class="integrante-imagem">
-                <img src="colaboradora1.png" alt="Dacruz Nery - Fundadora do Cuidador de Ouro">
+                <img src="colaboradora1.png" alt="Dacruz Nery - Fundadora do Cuidador de Ouro, especialista em cuidados com mais de 15 anos de experiência">
             </div>
             <div class="integrante-info">
                 <h3 class="integrante-nome">Dacruz Nery</h3>
@@ -806,10 +891,9 @@
             </div>
         </div>
 
-        <!-- CARMEM NERY -->
         <div class="integrante-card">
             <div class="integrante-imagem">
-                <img src="colaboradora2.png" alt="Carmem Nery - Gerente de Atendimento">
+                <img src="colaboradora2.png" alt="Carmem Nery - Gerente de Atendimento com mais de 10 anos de experiência em cuidados de idosos e crianças">
             </div>
             <div class="integrante-info">
                 <h3 class="integrante-nome">Carmem Nery</h3>
@@ -824,122 +908,102 @@
             </div>
         </div>
 
-        <!-- NOVA SEÇÃO: Produtos e criações da Dacruz (AGORA APÓS A CARMEM) -->
         <div class="dacruz-produtos">
             <h3 class="produtos-titulo">O legado de Dacruz em produtos</h3>
             <p class="produtos-subtitulo">Alguns de nossos materiais desenvolvidos com carinho para transformar o cuidado</p>
             
-            <!-- Grid de produtos -->
             <div class="produtos-grid">
-                <!-- Ebook -->
                 <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="diario.jpeg" alt="E-book: Diário do Idoso"    onerror="this.src='https://via.placeholder.com/400x300?text=E-book+Cuidador+de+Ouro'">
+                        <img src="diario.jpeg" alt="E-book Diário do Idoso - ferramenta para registro diário da rotina e saúde do idoso">
                     </div>
                     <div class="produto-info">
                         <h4 class="produto-nome">📱 E-book "Diário do Idoso"</h4>
                         <p class="produto-descricao">📘 Diário do Idoso 2026 – Organização que gera cuidado de qualidade.</p>
-
                         <p>O Diário do Idoso é uma ferramenta essencial para acompanhar de forma organizada a rotina e a saúde da pessoa idosa.</p>
-
                         <p>❤️Permite registrar diariamente: medicamentos, sinais vitais, alimentação, sono e observações importantes.</p>
-
-                        <p>💛 Um cuidado mais seguro, profissional e humanizado, facilitando a comunicação entre cuidadores, familiares e profissionais da saúde.</p>                    </div>
+                        <p>💛 Um cuidado mais seguro, profissional e humanizado, facilitando a comunicação entre cuidadores, familiares e profissionais da saúde.</p>
+                    </div>
                 </div>
 
-                <!-- Livro Físico -->
                 <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="comorbidade .jpeg" alt="E-Book: Cuidador de Ouro Principais Comorbidades em Idosos" onerror="this.src='https://via.placeholder.com/400x300?text=Livro+Físico'">
+                        <img src="comorbidade .jpeg" alt="E-book Principais Comorbidades em Idosos - guia essencial para cuidadores">
                     </div>
                     <div class="produto-info">
-                        <h4 class="produto-nome">📘 E-book – Cuidador de Ouro Principais Comorbidades em Idosos</h4>
+                        <h4 class="produto-nome">📘 E-book – Principais Comorbidades em Idosos</h4>
                         <p class="produto-descricao">📘✨ E-book – Cuidador de Ouro Principais Comorbidades em Idosos.</p>
-
                         <p>E-book essencial para quem deseja oferecer um cuidado seguro, humano e profissional aos idosos. Aborda as principais comorbidades e ensina como agir com mais preparo e atenção.</p>
-
                         <p>📚Indicado para cuidadores, familiares, profissionais da saúde e quem busca qualificação na área.</p>
-
-                        <p>💛 Cuide com excelência, amor, técnica e respeito.</p>                  
-                      </div>
+                        <p>💛 Cuide com excelência, amor, técnica e respeito.</p>
+                    </div>
                 </div>
                 <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="marketing .jpeg" alt="E-Book: marketing pessoal para cuidadores de idosos" onerror="this.src='https://via.placeholder.com/400x300?text=Livro+Físico'">
+                        <img src="marketing .jpeg" alt="E-book Marketing Pessoal para Cuidadores de Idosos - como se destacar no mercado">
                     </div>
                     <div class="produto-info">
                         <h4 class="produto-nome">📘 E-book – Marketing Pessoal para Cuidadores de Idosos</h4>
                         <p class="produto-descricao">📘✨ E-book – Marketing Pessoal para Cuidadores de Idosos.</p>
                         <p>Qualificar-se é o primeiro passo para conquistar oportunidades na área de cuidados. Profissionais preparados são mais valorizados no mercado de trabalho.</p>
-
                         <p>Dacruz Nery, com quase 20 anos de experiência como Técnica e profissional de RH, prepara cuidadores para se destacarem com excelência e humanidade.</p>
-
                         <p>✨ Invista em conhecimento e transforme sua carreira em um verdadeiro Cuidador de Ouro!</p>
                     </div>
                 </div>
             
             <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="EBOOK.jpeg" alt="E-Book: Cuidando com Excelência de quem Sempre Cuidou de Você" onerror="this.src='https://via.placeholder.com/400x300?text=Livro+Físico'">
+                        <img src="EBOOK.jpeg" alt="E-book Cuidando com Excelência de quem Sempre Cuidou de Você - cuidado humanizado">
                     </div>
                     <div class="produto-info">
                         <h4 class="produto-nome">📘 E-book – Cuidando com Excelência de quem Sempre Cuidou de Você</h4>
                         <p class="produto-descricao">📘✨ E-book – Cuidando com Excelência de quem Sempre Cuidou de Você.</p>
                         <p>Cuidar é mais do que um trabalho: é uma missão de amor, respeito e responsabilidade.</p>
-
                         <p>Com quase duas décadas de experiência, Dacruz Nery prepara cuidadores para oferecer um atendimento humano e de excelência, baseado em empatia, técnica e profissionalismo.</p>
-
                         <p>💛 Se você quer se tornar um verdadeiro Cuidador de Ouro, este e-book é para você!</p>
                     </div>
                 </div>
             
                 <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="deveres .jpeg" alt="E-Book: O que toda Patroa Gostaria que sua Empregada Soubesse..." onerror="this.src='https://via.placeholder.com/400x300?text=Livro+Físico'">
+                        <img src="deveres .jpeg" alt="E-book O que toda Patroa Gostaria que sua Empregada Soubesse - direitos e deveres">
                     </div>
                     <div class="produto-info">
                         <h4 class="produto-nome">📘 E-book – O que toda Patroa Gostaria que sua Empregada Soubesse...</h4>
                         <p class="produto-descricao">📘✨ E-book – O que toda Patroa Gostaria que sua Empregada Soubesse...</p>
                         <p>Dacruz Nery sempre ensinou que todo profissional precisa de qualificação para crescer e ser valorizado no mercado.</p>
-
                         <p>Há quase duas décadas, ela forma cuidadores de idosos e empregados domésticos, reforçando a importância do profissionalismo, do respeito e também dos direitos trabalhistas.</p>
-
-                        <p>📋 Este material ajuda profissionais e empregadores a construírem uma relação de trabalho mais justa, respeitosa e profissional.</p>                    </div>
+                        <p>📋 Este material ajuda profissionais e empregadores a construírem uma relação de trabalho mais justa, respeitosa e profissional.</p>
+                    </div>
                 </div>
-
+                
                 <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="sinais.jpeg" alt="E-Book: Sinais Vitais." onerror="this.src='https://via.placeholder.com/400x300?text=Livro+Físico'">
+                        <img src="sinais.jpeg" alt="E-book Sinais Vitais - guia prático para monitoramento da saúde do idoso">
                     </div>
                     <div class="produto-info">
                         <h4 class="produto-nome">📘 E-book – Sinais Vitais</h4>
                         <p class="produto-descricao">📘✨ E-book – Sinais Vitais</p>
                         <p>📘 Mini e-book prático criado por Dacruz Nery para consulta rápida no dia a dia do cuidado com idosos.</p>
-
                         <p>Após quase duas décadas na área, Dacruz reforça que monitorar sinais vitais é fundamental para a segurança e saúde do idoso, ajudando a prevenir complicações.</p>
-
-                        <p>💛 Um guia essencial para um cuidado mais seguro, atento e profissional. Cuidar dos sinais vitais é cuidar da vida.</p>                 </div>
+                        <p>💛 Um guia essencial para um cuidado mais seguro, atento e profissional. Cuidar dos sinais vitais é cuidar da vida.</p>
+                    </div>
                 </div>
-
             </div>
                 <div class="produto-item">
                     <div class="produto-imagem">
-                        <img src="eco.jpeg" alt="Ecobolsa Cuidador de Ouro" onerror="this.src='https://via.placeholder.com/400x300?text=Ecobolsa+Oficial'">
+                        <img src="eco.jpeg" alt="Ecobolsa oficial Cuidador de Ouro - sustentável e exclusiva para alunas do curso">
                     </div>
                     <div class="produto-info">
-                        <h4 class="produto-nome">👜 Ecobolsa Oficial.</h4>
+                        <h4 class="produto-nome">👜 Ecobolsa Oficial</h4>
                         <p class="produto-descricao"> 👜 Ecobolsa de TNT.</p>
-                        <p>A Ecobolsa exclusiva foi desenvolvida especialmente para os alunas do curso Cuidador de Ouro. Confortável, resistente e cheia de significado, representa o orgulho de fazer parte dessa missão.</p>
-
-                        <p>Ideal para o dia a dia da cuidador, comporta materiais de trabalho, documentos e itens pessoais com muito estilo e praticidade.</p>
-
-                        <p>💛 Cada bolsa carrega a história de uma cuidadora que escolheu transformar vidas com dedicação, amor e excelência no cuidado.</p>                 
-                       
+                        <p>A Ecobolsa exclusiva foi desenvolvida especialmente para as alunas do curso Cuidador de Ouro. Confortável, resistente e cheia de significado, representa o orgulho de fazer parte dessa missão.</p>
+                        <p>Ideal para o dia a dia da cuidadora, comporta materiais de trabalho, documentos e itens pessoais com muito estilo e praticidade.</p>
+                        <p>💛 Cada bolsa carrega a história de uma cuidadora que escolheu transformar vidas com dedicação, amor e excelência no cuidado.</p>
                     </div>
                 </div>
-  
             </div>
-            <!-- Texto especial sobre a ecobolsa -->
+
             <div style="margin-top: 3rem; padding: 2rem; background: var(--verde-claro); border-radius: 30px; text-align: center;">
                 <i class="fas fa-heart" style="font-size: 3rem; color: var(--laranja-pastel); margin-bottom: 1rem;"></i>
                 <h4 style="font-size: 1.8rem; color: var(--verde-pastel); margin-bottom: 1rem;">A história por trás da Ecobolsa</h4>
@@ -948,7 +1012,8 @@
                     <br><br>
                     <strong>"Eu queria que meus alunos e alunas tivessem algo que representasse não apenas o curso, mas a jornada deles. Cada bolsa carrega a história de quem escolheu se dedicar ao cuidado com excelência."</strong>
                     <br><br>
-                    Feita com materiais sustentáveis e design pensado para o dia a dia de quem cuida, a ecobolsa já é um item desejado e <strong>presente em mais de 300 lares</strong> onde o cuidado de qualidade faz a diferença.</p>
+                    Feita com materiais sustentáveis e design pensado para o dia a dia de quem cuida, a ecobolsa já é um item desejado e <strong>presente em mais de 300 lares</strong> onde o cuidado de qualidade faz a diferença.
+                </p>
                 <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                     <span style="background: var(--verde-pastel); color: white; padding: 0.5rem 1rem; border-radius: 50px;">🌿 Sustentável</span>
                     <span style="background: var(--verde-pastel); color: white; padding: 0.5rem 1rem; border-radius: 50px;">❤️ Exclusiva</span>
@@ -966,7 +1031,6 @@
         </a>
     </div>
 
-    <!-- Modal Contato (mesmo das outras páginas) -->
     <div id="modalContato" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
         <div class="modal-content" style="background: white; padding: 2rem; border-radius: 20px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; position: relative;">
             <span class="close-modal" onclick="closeContato()" style="position: absolute; top: 1rem; right: 1rem; font-size: 2rem; cursor: pointer; color: #999;">&times;</span>
@@ -1020,6 +1084,12 @@
         <p style="margin-top: 1rem;"><a href="curso.html">← Conheça o curso completo para Cuidadores</a></p>
     </footer>
 
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
     <script>
         function openMenu() {
             document.getElementById("sideMenu").classList.toggle("open");
@@ -1039,7 +1109,6 @@
             document.body.style.overflow = "auto";
         }
 
-        // ANIMAÇÃO REVEAL DINÂMICA - APARECE E DESAPARECE
         function reveal() {
             const cards = document.querySelectorAll('.integrante-card');
             const windowHeight = window.innerHeight;
@@ -1048,7 +1117,6 @@
                 const cardTop = card.getBoundingClientRect().top;
                 const cardBottom = card.getBoundingClientRect().bottom;
                 
-                // Verifica se o card está visível na tela
                 if (cardTop < windowHeight - 100 && cardBottom > 100) {
                     card.classList.add('reveal');
                 } else {
@@ -1060,7 +1128,6 @@
         window.addEventListener('scroll', reveal);
         window.addEventListener('load', reveal);
 
-        // Fechar modal ao clicar fora
         window.onclick = function(event) {
             const modal = document.getElementById('modalContato');
             if (event.target == modal) {
@@ -1068,185 +1135,98 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'block';
+            lightboxImg.src = element.src;
+            
+            let caption = element.alt;
+            if (!caption) {
+                const produtoItem = element.closest('.produto-item');
+                if (produtoItem) {
+                    const titulo = produtoItem.querySelector('.produto-nome');
+                    if (titulo) caption = titulo.textContent;
+                }
+                
+                const integranteCard = element.closest('.integrante-card');
+                if (integranteCard && !caption) {
+                    const nome = integranteCard.querySelector('.integrante-nome');
+                    if (nome) caption = nome.textContent;
+                }
+            }
+            
+            lightboxCaption.textContent = caption || 'Cuidador de Ouro';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.integrante-imagem img, .produto-imagem img, .foto-dupla img').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openLightbox(this);
+                });
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        document.getElementById('lightbox-img').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
     </script>
-
-    <!-- LIGHTBOX PARA IMAGENS -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-</div>
-
-<style>
-/* ESTILOS DO LIGHTBOX */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(5px);
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 85%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    animation: zoom 0.3s ease;
-}
-
-@keyframes zoom {
-    from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
-    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 10000;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-}
-
-.lightbox-close:hover {
-    color: var(--laranja-pastel);
-    transform: rotate(90deg);
-    background: rgba(255,255,255,0.2);
-}
-
-.lightbox-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    pointer-events: none;
-}
-
-/* Tornar as imagens clicáveis */
-.integrante-imagem img,
-.produto-imagem img,
-.foto-dupla img {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.integrante-imagem img:hover,
-.produto-imagem img:hover,
-.foto-dupla img:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-}
-</style>
-
-<script>
-// FUNÇÃO DO LIGHTBOX
-function openLightbox(element) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    
-    lightbox.style.display = 'block';
-    lightboxImg.src = element.src;
-    
-    // Pega o texto alternativo ou cria uma legenda baseada no contexto
-    let caption = element.alt;
-    if (!caption) {
-        // Tenta encontrar o título do produto
-        const produtoItem = element.closest('.produto-item');
-        if (produtoItem) {
-            const titulo = produtoItem.querySelector('.produto-nome');
-            if (titulo) caption = titulo.textContent;
-        }
-        
-        // Tenta encontrar o nome da integrante
-        const integranteCard = element.closest('.integrante-card');
-        if (integranteCard && !caption) {
-            const nome = integranteCard.querySelector('.integrante-nome');
-            if (nome) caption = nome.textContent;
-        }
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Cuidadores de Ouro",
+        "description": "Equipe dedicada à formação de cuidadores de idosos e produção de materiais especializados para cuidado humanizado.",
+        "founder": {
+          "@type": "Person",
+          "name": "Dacruz Nery",
+          "description": "Fundadora do Cuidador de Ouro, especialista com mais de 15 anos de experiência em cuidados de idosos."
+        },
+        "employee": [
+          {
+            "@type": "Person",
+            "name": "Carmem Nery",
+            "description": "Gerente de Atendimento com mais de 10 anos de experiência em cuidados de idosos e crianças."
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Diário do Idoso",
+              "description": "Ferramenta para registro diário da rotina e saúde do idoso."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "E-book Principais Comorbidades em Idosos",
+              "description": "Guia essencial sobre as principais doenças que afetam idosos."
+            }
+          }
+        ]
+      }
     }
-    
-    lightboxCaption.textContent = caption || 'Cuidador de Ouro';
-    
-    // Bloqueia o scroll da página
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Adicionar evento de clique a todas as imagens
-document.addEventListener('DOMContentLoaded', function() {
-    // Imagens dos integrantes
-    document.querySelectorAll('.integrante-imagem img').forEach(img => {
-        img.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openLightbox(this);
-        });
-    });
-    
-    // Imagens dos produtos
-    document.querySelectorAll('.produto-imagem img').forEach(img => {
-        img.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openLightbox(this);
-        });
-    });
-    
-    // Imagens das fotos duplas
-    document.querySelectorAll('.foto-dupla img').forEach(img => {
-        img.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openLightbox(this);
-        });
-    });
-});
-
-// Fechar com a tecla ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeLightbox();
-    }
-});
-
-// Prevenir que o clique no conteúdo feche o lightbox
-document.getElementById('lightbox-img').addEventListener('click', function(e) {
-    e.stopPropagation();
-});
-</script>
+    </script>
 </body>
 </html>
