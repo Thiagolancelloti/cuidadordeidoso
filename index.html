@@ -38,6 +38,8 @@
             --laranja-pastel: #c97248;
             --laranja-escuro: #c97248;
             --texto-escuro: #4a4a4a;
+            --dourado: #d4af37;
+            --dourado-escuro: #b8941e;
         }
 
         .header {
@@ -65,24 +67,6 @@
                 transform: translateY(0);
                 opacity: 1;
             }
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
-            color: #5a5a5a;
-        }
-
-        .header h1 i {
-            color: var(--laranja-escuro);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
         }
 
         .container {
@@ -125,7 +109,7 @@
         .buttons-section {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             margin: 2rem 0 3rem 0;
             flex-wrap: wrap;
         }
@@ -134,13 +118,15 @@
             background: white;
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
             width: 300px;
             animation: float 3s ease-in-out infinite;
+            text-decoration: none;
+            display: block;
         }
 
         .card-btn:hover {
@@ -158,6 +144,11 @@
             color: #ffffff;
         }
 
+        .card-btn.vip {
+            background: linear-gradient(135deg, #d4af37 0%, #b8941e 100%);
+            color: #ffffff;
+        }
+
         .card-btn i {
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -172,7 +163,7 @@
 
         .card-btn p {
             font-size: 1rem;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         @keyframes float {
@@ -294,62 +285,6 @@
             line-height: 1.4;
         }
 
-        .social-section {
-            text-align: center;
-            margin: 4rem 0;
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
-        }
-
-        .social-section h3 {
-            color: var(--texto-escuro);
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            animation: bounce 2s infinite;
-        }
-
-        .social-icon.instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        }
-
-        .social-icon.tiktok {
-            background: linear-gradient(45deg, #010101 0%, #010101 50%, #69C9D0 100%);
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1) rotate(360deg);
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
         .modal {
             display: none;
             position: fixed;
@@ -380,8 +315,8 @@
             padding: 2rem;
             border-radius: 20px;
             width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
+            max-width: 550px;
+            max-height: 85vh;
             overflow-y: auto;
             position: relative;
         }
@@ -389,7 +324,7 @@
         .modal-content h2 {
             color: var(--texto-escuro);
             margin-bottom: 1.5rem;
-            font-size: 2rem;
+            font-size: 1.8rem;
             text-align: center;
         }
 
@@ -459,6 +394,83 @@
             box-shadow: 0 10px 20px rgba(183, 224, 183, 0.3);
         }
 
+        /* Modal VIP - Informativo */
+        .modal-vip {
+            max-width: 600px;
+        }
+
+        .vip-badge {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .vip-badge i {
+            font-size: 3rem;
+            color: var(--dourado);
+            margin: 0 0.5rem;
+        }
+
+        .vantagens-lista {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .vantagens-lista li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .vantagens-lista li:last-child {
+            border-bottom: none;
+        }
+
+        .vantagens-lista li i {
+            color: var(--dourado);
+            width: 24px;
+            font-size: 1.1rem;
+        }
+
+        .vip-destaque {
+            background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            font-weight: bold;
+        }
+
+        .btn-hotmart {
+            display: block;
+            background: linear-gradient(135deg, #d4af37, #b8941e);
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            border: 2px solid white;
+        }
+
+        .btn-hotmart:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-hotmart i {
+            margin-right: 0.5rem;
+        }
+
         .footer {
             background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
             color: var(--texto-escuro);
@@ -486,27 +498,13 @@
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
             .buttons-section {
-                gap: 1.5rem;
+                gap: 1rem;
             }
 
             .card-btn {
                 width: 100%;
                 max-width: 300px;
-            }
-
-            .social-icons {
-                gap: 1rem;
-            }
-
-            .social-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
             }
 
             .curso-section h3 {
@@ -517,9 +515,13 @@
                 padding: 1rem 1.5rem;
                 font-size: 1.1rem;
             }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
         }
 
-        /* MENU LATERAL - PADRÃO CORRETO */
+        /* MENU LATERAL */
         .menu-btn {
             position: fixed;
             top: 25px;
@@ -550,53 +552,50 @@
             transform: translateX(6px);
         }
 
-        /* MENU LATERAL - CORRIGIDO */
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: -280px;
-    width: 280px;
-    height: 100%;
-    padding-top: 100px;
-    background: rgba(65, 113, 101, 0.95);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: 0.5s;
-    z-index: 2500;
-    border-top-right-radius: 120px;
-    border-bottom-right-radius: 120px;
-    box-shadow: 10px 0 40px rgba(0,0,0,0.2);
-    border-right: 2px solid rgba(255,255,255,0.2);
-    overflow: hidden;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    mask-image: radial-gradient(white, black);
-}
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            padding-top: 100px;
+            background: rgba(65, 113, 101, 0.95);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: 0.5s;
+            z-index: 2500;
+            border-top-right-radius: 120px;
+            border-bottom-right-radius: 120px;
+            box-shadow: 10px 0 40px rgba(0,0,0,0.2);
+            border-right: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+        }
 
-.side-menu a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 30px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-    border-radius: 30px 0 0 30px;
-}
+        .side-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 30px 0 0 30px;
+        }
 
-.side-menu a i {
-    font-size: 20px;
-}
+        .side-menu a i {
+            font-size: 20px;
+        }
 
-.side-menu a:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateX(10px);
-    box-shadow: 0 0 15px rgba(255,255,255,0.3);
-}
+        .side-menu a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
 
-.side-menu.open {
-    left: 0;
-}
+        .side-menu.open {
+            left: 0;
+        }
 
         .menu-close {
             position: absolute;
@@ -642,7 +641,6 @@
             text-decoration: none;
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             transition: 0.3s;
-            animation: float-whats 3s ease-in-out infinite;
         }
 
         .float-btn:hover {
@@ -818,12 +816,6 @@
                 padding: 1rem;
             }
         }
-
-        @media (min-width: 1600px) {
-            .noticias-imagem {
-                max-width: 1400px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -884,6 +876,12 @@
                 <i class="fas fa-user-md"></i>
                 <h3>Preciso de um <strong>Cuidador</strong></h3>
                 <p>Encontre profissionais qualificados para Cuidar</p>
+            </div>
+
+            <div class="card-btn vip" onclick="openModal('vip')">
+                <i class="fas fa-crown"></i>
+                <h3>Quero ser <strong>VIP</strong></h3>
+                <p>Destaque-se e tenha acesso a oportunidades exclusivas</p>
             </div>
         </section>
 
@@ -1104,6 +1102,60 @@
         </div>
     </div>
 
+    <!-- MODAL VIP - COM INFORMAÇÕES COMPLETAS E LINK HOTMART -->
+    <div id="modalVip" class="modal">
+        <div class="modal-content modal-vip">
+            <span class="close-modal" onclick="closeModal('vip')">&times;</span>
+            
+            <div class="vip-badge">
+                <i class="fas fa-crown"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-crown"></i>
+            </div>
+            
+            <h2>✨ SEJA VIP – CUIDADORES DE OURO ✨</h2>
+            
+            <p style="text-align: center; margin-bottom: 1rem;">
+                Você que quer se destacar na área de cuidador de idosos chegou no lugar certo! 💛
+            </p>
+            
+            <div class="vip-destaque">
+                🚀 Entre para o GRUPO VIP e tenha acesso a um verdadeiro leque de oportunidades!
+            </div>
+            
+            <h3 style="color: var(--dourado-escuro); margin: 1rem 0 0.5rem 0;">🌟 VANTAGENS DE SER VIP:</h3>
+            
+            <ul class="vantagens-lista">
+                <li><i class="fas fa-check-circle"></i> Acesso vitalício ao grupo exclusivo</li>
+                <li><i class="fas fa-globe"></i> Seu currículo divulgado no site 🌐</li>
+                <li><i class="fas fa-bullhorn"></i> Acesso diário a vagas disponíveis 📢</li>
+                <li><i class="fas fa-video"></i> Plataforma com aulas gravadas 🎓</li>
+                <li><i class="fas fa-chalkboard-user"></i> Mentoria com Dacruz Nery 💬</li>
+                <li><i class="fas fa-handshake"></i> Indicações para oportunidades 🤝</li>
+                <li><i class="fas fa-gift"></i> Brindes exclusivos 🎁</li>
+                <li><i class="fas fa-book"></i> E-books completos 📚</li>
+                <li><i class="fas fa-id-card"></i> 1 Cartão de visita digital 📲</li>
+                <li><i class="fas fa-file-alt"></i> 1 Currículo profissional 📄</li>
+            </ul>
+            
+            <div class="vip-destaque" style="background: linear-gradient(135deg, var(--verde-escuro), var(--laranja-escuro));">
+                💎 Aqui você não fica perdido… você cresce, se posiciona e se torna um Cuidador de Ouro de verdade!
+            </div>
+            
+            <p style="text-align: center; font-weight: bold; margin: 1.5rem 0 0.5rem 0; font-size: 1.2rem;">
+                🔥 Não perca essa oportunidade de mudar sua realidade profissional!
+            </p>
+            
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 1rem;">
+                👉 VENHA SER VIP! 👑💚
+            </p>
+            
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" target="_blank" class="btn-hotmart">
+                <i class="fas fa-crown"></i> QUERO SER VIP AGORA
+            </a>
+        </div>
+    </div>
+
     <div class="social-float">
         <a href="https://wa.me/556299376373?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i>
@@ -1179,14 +1231,18 @@
     <script>
         function openModal(tipo) {
             const modal = document.getElementById(`modal${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeModal(tipo) {
             const modal = document.getElementById(`modal${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         }
 
         window.onclick = function(event) {
@@ -1215,7 +1271,7 @@
             document.getElementById("modalContato").style.display = "none";
         }
     </script>
-<!-- SCHEMA.ORG (dados estruturados para o Google) -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1229,7 +1285,6 @@
       ],
       "description": "Conectamos cuidadores de idosos qualificados a famílias que precisam de cuidados especiais."
     }
-</script>
-    
+    </script>
 </body>
 </html>
