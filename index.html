@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidador de Ouro - Cuidando com Excelência </title>
+    <title>Cuidador de Ouro - Cuidando com Excelência</title>
     <meta name="description" content="Conectamos cuidadores de idosos qualificados a famílias que precisam de cuidados especiais. Cadastre-se para ser cuidador ou encontre um profissional agora.">
     <meta name="keywords" content="cuidador de idosos, cuidadores qualificados, serviço de cuidador, cuidador profissional, cuidado de idosos, vaga cuidador">
     <meta name="author" content="Cuidadores de Ouro">
@@ -392,83 +392,6 @@
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(183, 224, 183, 0.3);
-        }
-
-        /* Modal VIP - Informativo */
-        .modal-vip {
-            max-width: 600px;
-        }
-
-        .vip-badge {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .vip-badge i {
-            font-size: 3rem;
-            color: var(--dourado);
-            margin: 0 0.5rem;
-        }
-
-        .vantagens-lista {
-            background: #f9f9f9;
-            border-radius: 15px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            list-style: none;
-        }
-
-        .vantagens-lista li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .vantagens-lista li:last-child {
-            border-bottom: none;
-        }
-
-        .vantagens-lista li i {
-            color: var(--dourado);
-            width: 24px;
-            font-size: 1.1rem;
-        }
-
-        .vip-destaque {
-            background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            font-weight: bold;
-        }
-
-        .btn-hotmart {
-            display: block;
-            background: linear-gradient(135deg, #d4af37, #b8941e);
-            color: white;
-            text-align: center;
-            padding: 1.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-            margin-top: 1.5rem;
-            border: 2px solid white;
-        }
-
-        .btn-hotmart:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-hotmart i {
-            margin-right: 0.5rem;
         }
 
         .footer {
@@ -878,11 +801,12 @@
                 <p>Encontre profissionais qualificados para Cuidar</p>
             </div>
 
-            <div class="card-btn vip" onclick="openModal('vip')">
+            <!-- Card VIP agora redireciona para página vip.html -->
+            <a href="vip.html" class="card-btn vip" style="text-decoration: none; display: block;">
                 <i class="fas fa-crown"></i>
-                <h3>Vantagens de ser <strong>VIP</strong></h3>
+                <h3>Quero ser <strong>VIP</strong></h3>
                 <p>Destaque-se e tenha acesso a oportunidades exclusivas</p>
-            </div>
+            </a>
         </section>
 
         <div class="curso-section">
@@ -1100,70 +1024,6 @@
                 <button type="submit" class="submit-btn">Solicitar cuidador</button>
             </form>
         </div>
-    </div>
-
-    <!-- MODAL VIP - COM INFORMAÇÕES COMPLETAS E LINK HOTMART -->
-    <div id="modalVip" class="modal">
-        <div class="modal-content modal-vip">
-            <span class="close-modal" onclick="closeModal('vip')">&times;</span>
-            
-            <div class="vip-badge">
-                <i class="fas fa-crown"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-crown"></i>
-            </div>
-            
-            <h2>✨ SEJA VIP – CUIDADORES DE OURO ✨</h2>
-            
-            <p style="text-align: center; margin-bottom: 1rem;">
-                Você que quer se destacar na área de cuidador de idosos chegou no lugar certo! 💛
-            </p>
-            
-            <div class="vip-destaque">
-                🚀 Entre para o GRUPO VIP e tenha acesso a um verdadeiro leque de oportunidades!
-            </div>
-            
-            <h3 style="color: var(--dourado-escuro); margin: 1rem 0 0.5rem 0;">🌟 VANTAGENS DE SER VIP:</h3>
-            
-            <ul class="vantagens-lista">
-                <li><i class="fas fa-check-circle"></i> Acesso vitalício ao grupo exclusivo</li>
-                <li><i class="fas fa-globe"></i> Seu currículo divulgado no site 🌐</li>
-                <li><i class="fas fa-bullhorn"></i> Acesso diário a vagas disponíveis 📢</li>
-                <li><i class="fas fa-video"></i> Plataforma com aulas gravadas 🎓</li>
-                <li><i class="fas fa-chalkboard-user"></i> Mentoria com Dacruz Nery 💬</li>
-                <li><i class="fas fa-handshake"></i> Indicações para oportunidades 🤝</li>
-                <li><i class="fas fa-gift"></i> Brindes exclusivos 🎁</li>
-                <li><i class="fas fa-book"></i> E-books completos 📚</li>
-                <li><i class="fas fa-id-card"></i> 1 Cartão de visita digital 📲</li>
-                <li><i class="fas fa-file-alt"></i> 1 Currículo profissional 📄</li>
-            </ul>
-            
-            <div class="vip-destaque" style="background: linear-gradient(135deg, var(--verde-escuro), var(--laranja-escuro));">
-                💎 Aqui você não fica perdido… você cresce, se posiciona e se torna um Cuidador de Ouro de verdade!
-            </div>
-            
-            <p style="text-align: center; font-weight: bold; margin: 1.5rem 0 0.5rem 0; font-size: 1.2rem;">
-                🔥 Não perca essa oportunidade de mudar sua realidade profissional!
-            </p>
-            
-            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 1rem;">
-                👉 VENHA SER VIP! 👑💚
-            </p>
-            
-            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" target="_blank" class="btn-hotmart">
-                <i class="fas fa-crown"></i> QUERO SER VIP AGORA
-            </a>
-        </div>
-    </div>
-
-    <div class="social-float">
-        <a href="https://wa.me/556299376373?text=Olá! Gostaria de mais informações sobre o serviço de cuidadores." class="float-btn whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
     </div>
 
     <div id="modalContato" class="modal">
