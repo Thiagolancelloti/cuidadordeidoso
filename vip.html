@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja VIP - Cuidadores de Ouro</title>
+    <meta name="description" content="Torne-se um membro VIP e tenha acesso a oportunidades exclusivas, mentoria, vagas diárias e muito mais. Destaque-se como cuidador de idosos.">
+    <meta name="keywords" content="cuidador de idosos, cuidadores qualificados, serviço de cuidador, cuidador profissional, cuidado de idosos, vaga cuidador, programa vip">
+    <meta name="author" content="Cuidadores de Ouro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.cuidadoresdeouro.com.br/vip.html">
+    <meta property="og:title" content="Seja VIP - Cuidadores de Ouro">
+    <meta property="og:description" content="Torne-se um membro VIP e tenha acesso a oportunidades exclusivas, mentoria, vagas diárias e muito mais.">
+    <meta property="og:image" content="https://www.cuidadoresdeouro.com.br/cuidadoresdeouro.png">
+    <meta property="og:url" content="https://www.cuidadoresdeouro.com.br/vip.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cuidadores de Ouro">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="google-site-verification" content="bfpNXMvS9j_OhSvRnk5xpbhVGu9Z5yK4KaEiUfDsrMM" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #e6f3e6 100%);
+            min-height: 100vh;
+        }
+
+        :root {
+            --verde-pastel: #417165;
+            --verde-escuro: #417165;
+            --laranja-pastel: #c97248;
+            --laranja-escuro: #c97248;
+            --texto-escuro: #4a4a4a;
+            --dourado: #d4af37;
+            --dourado-escuro: #b8941e;
+        }
+
+        /* Header igual ao index */
+        .header {
+            background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
+            padding: 1rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .logo-header {
+            max-width: 550px;
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Botão voltar */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--verde-pastel);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: var(--verde-escuro);
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section VIP */
+        .vip-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .vip-badge {
+            margin-bottom: 1.5rem;
+        }
+
+        .vip-badge i {
+            font-size: 4rem;
+            color: var(--dourado);
+            margin: 0 0.5rem;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .vip-hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .vip-hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--texto-escuro);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Cards de vantagens */
+        .vantagens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .vantagem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid var(--dourado);
+        }
+
+        .vantagem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .vantagem-card i {
+            font-size: 3rem;
+            color: var(--dourado);
+            margin-bottom: 1rem;
+        }
+
+        .vantagem-card h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .vantagem-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Lista completa */
+        .lista-completa {
+            background: linear-gradient(135deg, rgba(65, 113, 101, 0.1), rgba(201, 114, 72, 0.1));
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .lista-completa h2 {
+            text-align: center;
+            color: var(--verde-escuro);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .lista-vantagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .lista-vantagens li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: var(--texto-escuro);
+            transition: transform 0.3s ease;
+        }
+
+        .lista-vantagens li:hover {
+            transform: translateX(5px);
+        }
+
+        .lista-vantagens li i {
+            color: var(--dourado);
+            font-size: 1.3rem;
+            width: 28px;
+        }
+
+        /* Destaque */
+        .destaque-box {
+            background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
+            border-radius: 30px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            color: white;
+        }
+
+        .destaque-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .destaque-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Botão CTA */
+        .btn-vip {
+            display: inline-block;
+            background: white;
+            color: var(--dourado-escuro);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-vip:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-vip i {
+            margin-right: 0.8rem;
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            margin: 4rem 0;
+        }
+
+        .depoimentos h2 {
+            text-align: center;
+            color: var(--verde-escuro);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .depoimento-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .depoimento-card i {
+            font-size: 2rem;
+            color: var(--dourado);
+            margin-bottom: 1rem;
+        }
+
+        .depoimento-card p {
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .depoimento-card h4 {
+            color: var(--verde-escuro);
+            margin-top: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin: 4rem 0;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: var(--verde-escuro);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item h3 {
+            color: var(--laranja-escuro);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Footer igual ao index */
+        .footer {
+            background: linear-gradient(135deg, #41716575 0%, #d99878ad 100%);
+            color: var(--texto-escuro);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: var(--texto-escuro);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--laranja-escuro);
+        }
+
+        .footer a:hover {
+            color: var(--laranja-escuro);
+        }
+
+        /* Menu lateral igual ao index */
+        .menu-btn {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 3000;
+            cursor: pointer;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: var(--verde-pastel);
+            margin: 6px 0;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+
+        .menu-btn:hover span:nth-child(1) {
+            transform: translateX(6px);
+        }
+
+        .menu-btn:hover span:nth-child(2) {
+            transform: translateX(-6px);
+        }
+
+        .menu-btn:hover span:nth-child(3) {
+            transform: translateX(6px);
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            padding-top: 100px;
+            background: rgba(65, 113, 101, 0.95);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: 0.5s;
+            z-index: 2500;
+            border-top-right-radius: 120px;
+            border-bottom-right-radius: 120px;
+            box-shadow: 10px 0 40px rgba(0,0,0,0.2);
+            border-right: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+        }
+
+        .side-menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 30px 0 0 30px;
+        }
+
+        .side-menu a i {
+            font-size: 20px;
+        }
+
+        .side-menu a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .side-menu.open {
+            left: 0;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-close:hover {
+            transform: rotate(90deg) scale(1.2);
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Botões flutuantes igual ao index */
+        .social-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .float-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transition: 0.3s;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-btn.whatsapp {
+            background: linear-gradient(135deg,#25d366,#128C7E);
+        }
+
+        .float-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        @media (max-width: 768px) {
+            .vip-hero h1 {
+                font-size: 2rem;
+            }
+            .vip-hero .subtitle {
+                font-size: 1rem;
+            }
+            .destaque-box h2 {
+                font-size: 1.5rem;
+            }
+            .btn-vip {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+            .lista-vantagens li {
+                font-size: 0.9rem;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-btn" onclick="openMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id="sideMenu" class="side-menu" onmouseleave="closeMenu()">
+        <div class="menu-close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="index.html">
+            <i class="fas fa-home"></i> Página Inicial
+        </a>
+        <a href="cuidadores.html">
+            <i class="fas fa-hands-helping"></i> O que são os Cuidadores
+        </a>
+        <a href="integrantes.html">
+            <i class="fas fa-user"></i> Conheça nossos cuidadores
+        </a>
+        <a href="curso.html">
+            <i class="fas fa-graduation-cap"></i> Curso completo
+        </a>
+        <a href="faq.html">
+            <i class="fas fa-question-circle"></i> Perguntas Frequentes
+        </a>
+    </div>
+
+    <header class="header">
+        <img src="logo.png" alt="Cuidadores de Ouro" class="logo-header">
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Voltar para página inicial
+        </a>
+
+        <div class="vip-hero">
+            <div class="vip-badge">
+                <i class="fas fa-crown"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-crown"></i>
+            </div>
+            <h1>✨ SEJA VIP – CUIDADORES DE OURO ✨</h1>
+            <p class="subtitle">Você que quer se destacar na área de cuidador de idosos chegou no lugar certo! 💛</p>
+        </div>
+
+        <div class="destaque-box">
+            <h2>🚀 Entre para o GRUPO VIP e tenha acesso a um verdadeiro leque de oportunidades!</h2>
+            <p>🌟 Destaque-se no mercado e conquiste sua independência financeira 🌟</p>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" target="_blank" class="btn-vip">
+                <i class="fas fa-crown"></i> QUERO SER VIP AGORA
+            </a>
+        </div>
+
+        <div class="vantagens-grid">
+            <div class="vantagem-card">
+                <i class="fas fa-infinity"></i>
+                <h3>Acesso Vitalício</h3>
+                <p>Acesso para sempre ao grupo exclusivo de VIPs</p>
+            </div>
+            <div class="vantagem-card">
+                <i class="fas fa-globe"></i>
+                <h3>Divulgação no Site</h3>
+                <p>Seu currículo divulgado no nosso site 🌐</p>
+            </div>
+            <div class="vantagem-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Vagas Diárias</h3>
+                <p>Acesso diário a vagas disponíveis 📢</p>
+            </div>
+            <div class="vantagem-card">
+                <i class="fas fa-video"></i>
+                <h3>Aulas Gravadas</h3>
+                <p>Plataforma completa com aulas gravadas 🎓</p>
+            </div>
+            <div class="vantagem-card">
+                <i class="fas fa-chalkboard-user"></i>
+                <h3>Mentoria Exclusiva</h3>
+                <p>Mentoria com Dacruz Nery 💬</p>
+            </div>
+            <div class="vantagem-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Indicações</h3>
+                <p>Indicações para oportunidades especiais 🤝</p>
+            </div>
+        </div>
+
+        <div class="lista-completa">
+            <h2>🎁 TODAS AS VANTAGENS INCLUSAS 🎁</h2>
+            <ul class="lista-vantagens">
+                <li><i class="fas fa-check-circle"></i> Acesso vitalício ao grupo exclusivo</li>
+                <li><i class="fas fa-globe"></i> Seu currículo divulgado no site 🌐</li>
+                <li><i class="fas fa-bullhorn"></i> Acesso diário a vagas disponíveis 📢</li>
+                <li><i class="fas fa-video"></i> Plataforma com aulas gravadas 🎓</li>
+                <li><i class="fas fa-chalkboard-user"></i> Mentoria com Dacruz Nery 💬</li>
+                <li><i class="fas fa-handshake"></i> Indicações para oportunidades 🤝</li>
+                <li><i class="fas fa-gift"></i> Brindes exclusivos 🎁</li>
+                <li><i class="fas fa-book"></i> E-books completos 📚</li>
+                <li><i class="fas fa-id-card"></i> 1 Cartão de visita digital 📲</li>
+                <li><i class="fas fa-file-alt"></i> 1 Currículo profissional 📄</li>
+            </ul>
+        </div>
+
+        <div class="destaque-box" style="background: linear-gradient(135deg, var(--verde-escuro), var(--laranja-escuro));">
+            <h2>💎 Aqui você não fica perdido…</h2>
+            <p>Você cresce, se posiciona e se torna um Cuidador de Ouro de verdade!</p>
+            <p style="font-size: 1.3rem; margin-top: 1rem;">🔥 Não perca essa oportunidade de mudar sua realidade profissional!</p>
+            <p style="font-size: 1.5rem; margin: 1.5rem 0;">👉 VENHA SER VIP! 👑💚</p>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuidador-de-idosos-cuidador-de-ouro-plus/I99528497X" target="_blank" class="btn-vip" style="background: var(--dourado); color: white;">
+                <i class="fas fa-crown"></i> QUERO SER VIP AGORA
+            </a>
+        </div>
+
+
+        <div class="faq-section">
+            <h2>❓ Perguntas Frequentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Como funciona o grupo VIP?</h3>
+                    <p>Após a compra, você recebe acesso imediato ao nosso grupo exclusivo, plataforma de aulas e materiais. Tudo online e disponível 24h.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Precisa ter experiência?</h3>
+                    <p>Não! O programa é para iniciantes e também para quem já atua e quer se destacar. As aulas cobrem desde o básico até técnicas avançadas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Como funciona a mentoria?</h3>
+                    <p>A mentoria com Dacruz Nery acontece ao vivo periodicamente e também por suporte direto no grupo VIP. Você tira todas as suas dúvidas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>O acesso é vitalício mesmo?</h3>
+                    <p>Sim! Uma vez VIP, você mantém acesso a todo o conteúdo e ao grupo exclusivo para sempre.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-float">
+        <a href="https://wa.me/556299376373?text=Olá! Gostaria de mais informações sobre o programa VIP." class="float-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/dacruzneryfranca" class="float-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Dacruz Nery. Todos os direitos reservados.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">"Cuidando com Excelência"</p>
+        <p style="margin-top: 1rem;"><a href="index.html">← Voltar para página inicial</a></p>
+    </footer>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").classList.toggle("open");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").classList.remove("open");
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cuidadores de Ouro",
+      "url": "https://www.cuidadoresdeouro.com.br",
+      "logo": "https://www.cuidadoresdeouro.com.br/cuidadoresdeouro.png",
+      "sameAs": [
+        "https://www.instagram.com/dacruzneryfranca",
+        "https://wa.me/556299376373"
+      ],
+      "description": "Torne-se um membro VIP e tenha acesso a oportunidades exclusivas, mentoria, vagas diárias e muito mais."
+    }
+    </script>
+</body>
+</html>
